@@ -37,7 +37,7 @@
     height: 100%
 }
 
-.button:hover .button:focus {
+.button:hover, .button:focus {
     --color-primary-raw: var(--color-text-raw);
     transform: scale(125%)
 }
