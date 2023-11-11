@@ -1,4 +1,3 @@
-import type { DocumentHead } from "@builder.io/qwik-city";
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
 import { RouterHead } from "~/components/router-head/router-head";
@@ -21,11 +20,3 @@ export default component$(() => {
         </QwikCityProvider>
     );
 });
-
-export const head: DocumentHead = {
-    "title": "erora",
-    "meta": [{
-        "name": "description",
-        "content": "Issues arise, bugs form. Error is inevitable."
-    }]
-};
