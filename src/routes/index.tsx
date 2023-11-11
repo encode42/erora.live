@@ -1,4 +1,3 @@
-import type { DocumentHead } from "@builder.io/qwik-city";
 import { component$ } from "@builder.io/qwik";
 import { Button } from "~/components/button/button";
 import { Erora } from "~/components/erora/erora";
