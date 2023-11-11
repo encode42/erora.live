@@ -2,17 +2,17 @@
     "name": "@encode42/erora.live",
     "description": "Issues arise, bugs form. Error is inevitable.",
     "author": {
-      "name": "encode42",
-      "email": "me@encode42.dev",
-      "url": "https://encode42.dev"
+        "name": "encode42",
+        "email": "me@encode42.dev",
+        "url": "https://encode42.dev"
     },
     "funding": {
-      "type": "github",
-      "url": "https://github.com/sponsors/encode42"
+        "type": "github",
+        "url": "https://github.com/sponsors/encode42"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/encode42/erora.live.git"
+        "type": "git",
+        "url": "https://github.com/encode42/erora.live.git"
     },
     "homepage": "https://erora.live",
     "license": "MIT",
