@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "erora",
+  "short_name": "erora",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#24273a",
+  "description": "Issues arise, bugs form. Error is inevitable."
+}

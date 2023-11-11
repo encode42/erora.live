@@ -1,0 +1,10 @@
+.circle {
+    fill: none;
+    stroke: var(--color-text);
+    stroke-miterlimit: 100;
+    stroke-width: 36.7
+}
+
+.line {
+    fill: var(--color-text)
+}

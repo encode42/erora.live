@@ -1,0 +1,43 @@
+.red {
+    --color-primary-raw: var(--ctp-macchiato-red-raw)
+}
+
+.rosewater {
+    --color-primary-raw: var(--ctp-macchiato-rosewater-raw)
+}
+
+.blue {
+    --color-primary-raw: var(--ctp-macchiato-blue-raw)
+}
+
+.mauve {
+    --color-primary-raw: var(--ctp-macchiato-mauve-raw)
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    --color-primary: rgb(var(--color-primary-raw));
+    background: rgba(var(--color-primary-raw), 0.25);
+    box-shadow: 0 0 2rem 0 rgba(var(--color-primary-raw), 0.25) inset;
+    color: var(--color-primary);
+    border: 0.1rem solid var(--color-primary);
+    border-radius: 50%;
+
+    transition-property: color, background, border, transform;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out
+}
+
+.button svg {
+    margin: 25%;
+    width: 100%;
+    height: 100%
+}
+
+.button:hover .button:focus {
+    --color-primary-raw: var(--color-text-raw);
+    transform: scale(125%)
+}

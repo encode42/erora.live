@@ -1,0 +1,30 @@
+.logo {
+    width: 100%;
+    min-height: 25%;
+    height: 1px;
+    filter: drop-shadow(0 0 2rem rgba(var(--color-text-raw), 0.25))
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    width: 75%
+}
+
+.buttons * {
+    flex-grow: 1
+}
+
+@media screen and (width <= 1280px) {
+    .buttons {
+        flex-direction: column;
+        height: 100%
+    }
+
+    .buttons a {
+        aspect-ratio: 1/1
+    }
+}

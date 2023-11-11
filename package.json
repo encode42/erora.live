@@ -1,0 +1,80 @@
+{
+    "name": "@encode42/erora.live",
+    "description": "Issues arise, bugs form. Error is inevitable.",
+    "author": {
+      "name": "encode42",
+      "email": "me@encode42.dev",
+      "url": "https://encode42.dev"
+    },
+    "funding": {
+      "type": "github",
+      "url": "https://github.com/sponsors/encode42"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/encode42/erora.live.git"
+    },
+    "homepage": "https://erora.live",
+    "license": "MIT",
+    "private": true,
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "trustedDependencies": [
+        "sharp"
+    ],
+    "scripts": {
+        "build": "qwik build",
+        "build.client": "vite build",
+        "build.preview": "vite build --ssr src/entry.preview.tsx",
+        "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
+        "build.types": "tsc --incremental --noEmit",
+        "deploy": "wrangler pages publish ./dist",
+        "dev": "vite --mode ssr",
+        "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+        "fmt": "prettier --write .",
+        "fmt.check": "prettier --check .",
+        "lint": "eslint \"src/**/*.ts*\"",
+        "preview": "qwik build preview && vite preview --open",
+        "serve": "wrangler pages dev ./dist",
+        "start": "vite --open --mode ssr",
+        "qwik": "qwik"
+    },
+    "devDependencies": {
+        "@builder.io/qwik": "^1.2.17",
+        "@builder.io/qwik-city": "^1.2.17",
+        "@types/eslint": "^8.44.7",
+        "@types/node": "^20.9.0",
+        "@typescript-eslint/eslint-plugin": "^6.10.0",
+        "@typescript-eslint/parser": "^6.10.0",
+        "eslint": "^8.53.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-jsonc": "^2.10.0",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-jsx-secure-form": "^0.0.5",
+        "eslint-plugin-markdown": "^3.0.1",
+        "eslint-plugin-promise": "^6.1.1",
+        "eslint-plugin-qwik": "^1.2.17",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-security": "^1.7.1",
+        "eslint-plugin-sonarjs": "^0.23.0",
+        "eslint-plugin-tsdoc": "^0.2.17",
+        "eslint-plugin-unicorn": "^49.0.0",
+        "eslint-plugin-xss": "^0.1.12",
+        "prettier": "^3.0.3",
+        "stylelint": "^15.11.0",
+        "stylelint-a11y": "^1.2.3",
+        "stylelint-color-format": "^1.1.0",
+        "stylelint-config-standard": "^34.0.0",
+        "typescript": "^5.2.2",
+        "undici": "^5.27.2",
+        "vite": "^4.5.0",
+        "vite-tsconfig-paths": "^4.2.1",
+        "wrangler": "^3.15.0"
+    },
+    "dependencies": {
+        "@catppuccin/palette": "^0.2.0",
+        "@qwikest/icons": "^0.0.13",
+        "modern-normalize": "^2.0.0"
+    }
+}
