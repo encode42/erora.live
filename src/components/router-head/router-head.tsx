@@ -6,7 +6,7 @@ export const RouterHead = component$(() => {
     const head = useDocumentHead();
     const location = useLocation();
 
-    const title = head.title ?? "erora";
+    const title = head.title || "erora";
     const description = head.meta.find(meta => meta.name === "description")?.content ?? pkg.description;
 
     return (
