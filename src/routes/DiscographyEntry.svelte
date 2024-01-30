@@ -22,6 +22,7 @@
 
     let focused: boolean = false;
     let modalShown: boolean = false;
+    let mouseOver: boolean = false;
 
     let brightnessWrapper = tweened(1, tweeningOptions);
     let rotateWrapperX = tweened(0, tweeningOptions);
@@ -68,10 +69,13 @@
     <div
         class="discography-entry"
         class:focused
+        class:depth={mouseOver}
         style:background-image="url({entry.art})"
         style:--brightness="{$brightnessWrapper}"
         style:--x="{$rotateWrapperX}deg"
         style:--y="{$rotateWrapperY}deg"
+        style:--dx="{$translateButtonX}px"
+        style:--dy="{$translateButtonY}px"
         bind:this={wrapper}
         on:pointermove={(event) => {
             if (!event.currentTarget) {
@@ -81,9 +85,11 @@
             moveCard(entry.title, event.currentTarget, event.currentTarget.clientWidth, event.currentTarget.clientHeight, event.offsetX, event.offsetY);
         }}
         on:mouseenter={() => {
+            mouseOver = true;
             currentTarget?.blur();
         }}
         on:mouseleave={() => {
+            mouseOver = false;
             resetTransformations();
         }}
     >
@@ -177,8 +183,14 @@
         filter: brightness(var(--brightness));
     }
 
+    .discography-entry.depth {
+        box-shadow:
+            calc(var(--dx) / -3) calc(var(--dy) / -3) 0px 0.25rem #8d79a5,
+            calc(var(--dx) / -2) calc(var(--dy) / -2) 0px 0.25rem #8d79a5
+    }
+
     .discography-entry:hover, .discography-entry.focused {
-        outline: 0.25rem solid var(--color-primary)
+        outline: 0.25rem solid var(--color-primary);
     }
 
     .discography-entry-button {
