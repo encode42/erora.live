@@ -93,7 +93,6 @@
             class="discography-entry-button"
             style:--x="{$translateButtonX}px"
             style:--y="{$translateButtonY}px"
-            style:--outline-offset="{$translateButtonY === 0 ? 0.1 : 0}rem"
             bind:this={button}
             on:focus={() => {
                 currentTarget = button;
@@ -185,6 +184,7 @@
     }
 
     .discography-entry-button {
+        -webkit-text-stroke: 1px #000;
         width: 100%;
         height: 100%;
         border: none;
@@ -196,7 +196,7 @@
         text-shadow:
             calc(var(--x) / -8) calc(var(--y) / -12) 0px #8d79a5, /* hard-coded */
             calc(var(--x) / -6) calc(var(--y) / -6) 0px #8d79a5, /* hard-coded */
-            calc(var(--x) / -4.5) calc(var(--y) / -4.5 + var(--outline-offset)) 0 var(--color-background),
+            calc(var(--x) / -4.5) calc(var(--y) / -4.5) 0 var(--color-background),
             calc(var(--x) * -1.5) calc(var(--y) * -1.5 + 1rem) max(0.75rem, calc(1rem + var(--y))) var(--color-background);
         cursor: pointer;
         transform: translateX(var(--x)) translateY(var(--y));
