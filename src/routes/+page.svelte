@@ -18,6 +18,11 @@
         logoRotation = willFlip ? logoFlipRotation : random * 20 - 10;
         logoInteractions++;
     }
+
+    // TODO:
+    // - Lint
+    // - Boilerplate files
+    // - Spotify fallback
 </script>
 
 <main>
