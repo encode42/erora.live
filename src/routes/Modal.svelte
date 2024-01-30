@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from "svelte";
 	import { fly } from "svelte/transition";
+	import { IconX } from "@tabler/icons-svelte";
 
     export let show: boolean;
 
@@ -33,7 +34,7 @@
 	<button on:click={() => {
 		dialogElement.close();
 	}}>
-		×
+		<IconX/>
 	</button>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<main on:click|stopPropagation>
@@ -43,24 +44,32 @@
 
 <style>
 	button {
+		aspect-ratio: 1/1;
 		position: absolute;
 		z-index: 5;
 		top: 1rem;
-		right: 1.25rem;
+		right: 1rem;
 		background: none;
 		border: none;
 		color: var(--color-text);
-		font-size: 2.5rem;
+		background: var(--color-background);
 		opacity: 0.75;
-		text-shadow: 0 0 1rem var(--color-text);
-		transition: transform 0.25s var(--transition-snappy);
+		border-radius: 2rem;
+		transition-property: transform, background, color;
+		transition-duration: 0.25s;
+		transition-timing-function: var(--transition-snappy);
 		cursor: pointer;
-		mix-blend-mode: difference;
 	}
 
 	button:hover, button:focus {
-		color: var(--color-secondary);
-		transform: scale(110%);
+		color: var(--color-background);
+		background: var(--color-primary);
+		transform: scale(125%);
+	}
+
+	button :global(svg) {
+		width: 3cqb;
+		height: 3cqb;
 	}
 
 	dialog {
