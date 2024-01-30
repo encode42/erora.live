@@ -15,6 +15,7 @@
     import { tweened } from "svelte/motion";
 	import { cubicOut } from "svelte/easing";
     import Destinations from "./Destinations.svelte";
+    import { IconPlayerPlayFilled, IconPlayerStopFilled } from "@tabler/icons-svelte";
 
     export let src: string;
     export let urls: AlbumSources | TrackSources | undefined = undefined;
@@ -72,7 +73,13 @@
             on:click={() => {
                 paused = !paused;
             }}
-        />
+        >
+            {#if paused}
+                <IconPlayerPlayFilled/>
+            {:else}
+                <IconPlayerStopFilled/>
+            {/if}
+        </button>
         <progress
             value={$progress}
             max={1}
@@ -101,15 +108,11 @@
         border-radius: 100%;
         width: 100%;
 		aspect-ratio: 1;
+        padding: 0.5rem;
         background: var(--color-primary);
         color: var(--color-surface);
-        font-size: 1rem;
         transition: transform 0.1s var(--transition-snappy);
         cursor: pointer;
-    }
-
-    button::before {
-        content: "▶";
     }
 
     button[aria-label="pause"] {
@@ -117,10 +120,11 @@
         animation: bubble 0.25s ease-out;
     }
 
-    button[aria-label="pause"]::before {
-        content: "■";
+    button :global(svg) {
+        width: 100%;
+        height: 100%;
     }
-    
+
     button:hover, button:focus-visible {
         background: var(--color-secondary);
         transform: scale(110%);
@@ -130,16 +134,28 @@
         outline: none;
     }
 
-    progress {
+    progress[value] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
         appearance: none;
         height: 100%;
-        border-radius: 2rem;
-        flex-grow: 1;
-        background: var(--color-surface);
+        width: 100%;
         border: none;
+        border-radius: 2rem;
+        background: var(--color-surface);
+        overflow: hidden;
+    }
+
+    progress[value]::-webkit-progress-bar {
+        border-radius: 2rem;
+        background: var(--color-surface);
     }
     
-    progress::-moz-progress-bar, progress::-webkit-progress-value {
+    progress[value]::-webkit-progress-value {
+        background: var(--color-primary);
+    }
+
+    progress[value]::-moz-progress-bar {
         background: var(--color-primary);
     }
 

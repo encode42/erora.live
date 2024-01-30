@@ -123,6 +123,10 @@
         transform: scale(125%) rotate(var(--logo-rotation));
     }
 
+    .logo:focus {
+        outline: none;
+    }
+
     .about {
         display: flex;
         flex-direction: column;

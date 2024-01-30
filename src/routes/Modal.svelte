@@ -60,10 +60,6 @@
 		transform: scale(110%);
 	}
 
-	main {
-		overflow-y: scroll;
-	}
-
 	dialog {
 		max-width: 65%;
 		border-radius: 2rem;
