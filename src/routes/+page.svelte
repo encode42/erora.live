@@ -35,8 +35,12 @@
         class="logo"
         style:--logo-rotation="{logoRotation}deg"
         style:--logo-rotation-speed="{logoFlipping ? 1.5 : 0.5}s"
-        on:focusin={() => {
+        on:focus={() => {
             bounceLogo();
+        }}
+        on:mousedown={(event) => {
+            event.stopImmediatePropagation();
+            event.preventDefault();
         }}
         on:mouseenter={() => {
             bounceLogo();
@@ -117,7 +121,7 @@
         animation: flicker 7s infinite;
     }
 
-    .logo:hover, .logo:focus {
+    .logo:hover, .logo:focus-visible {
         --color-current: var(--color-primary);
         filter: drop-shadow(0 0 2rem var(--color-current)) !important;
         transform: scale(125%) rotate(var(--logo-rotation));

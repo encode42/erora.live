@@ -84,8 +84,6 @@
             currentTarget?.blur();
         }}
         on:mouseleave={() => {
-            currentTarget?.focus();
-
             resetTransformations();
         }}
     >

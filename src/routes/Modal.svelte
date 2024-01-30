@@ -10,7 +10,10 @@
 
     let dialogElement: HTMLDialogElement;
 
-    $: if (dialogElement && show) dialogElement.showModal();
+    $: if (dialogElement && show) {
+		dialogElement.showModal();
+		dialogElement.focus();
+	}
 	$: if (!show) dispatch("close");
 </script>
 
