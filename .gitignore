@@ -40,5 +40,6 @@ lerna-debug.log*
 .yarn/*
 !.yarn/releases
 
-# Cloudflare
-functions/**/*.js
+# Svelte
+/.svelte-kit/
+/build/

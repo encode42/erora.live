@@ -1,0 +1,26 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 189 189" width="189" height="189">
+	<title>ea</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h95v189h-95zm33 0h156v91h-156z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m94 189c-52.26 0-94-43.74-94-96 0-52.26 42.74-93 95-93 52.26 0 94 41.74 94 94 0 52.26-42.74 95-95 95z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: #cad3f5;stroke-miterlimit:100;stroke-width: 36.7 } 
+		.s1 { fill: #cad3f5 } 
+	</style>
+	<g id="ea">
+		<g id="e">
+			<g id="o" clip-path="url(#cp1)">
+				<path id="o" class="s0" d="m94.4 170.9c-42.2 0-76.4-34.2-76.4-76.5 0-42.2 34.2-76.4 76.4-76.4 42.3 0 76.4 34.2 76.4 76.4 0 42.3-34.1 76.5-76.4 76.5z"/>
+			</g>
+			<g id="e stem" clip-path="url(#cp2)">
+				<path id="e stem" class="s1" d="m189 73v37h-166v-37c45.8 0 166 0 166 0z"/>
+			</g>
+			<path id="a stem" class="s1" d="m153 95h36v94h-36z"/>
+		</g>
+	</g>
+</svg>
