@@ -43,3 +43,6 @@ lerna-debug.log*
 # Svelte
 /.svelte-kit/
 /build/
+
+# Cloudflare
+/.wrangler/

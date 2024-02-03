@@ -1,6 +1,6 @@
 import type { Discography, DiscographyObject } from "$lib/types/discography/entries";
 import type { Extra, ExtraObject } from "$lib/types/discography/extra";
-import bandcamp, { ImageFormatFilter } from "bandcamp-fetch";
+import bandcamp, { ImageFormatFilter } from "@encode42/bandcamp-fetch";
 import { getTrack } from "./getTrack";
 import { getAlbum } from "./getAlbum";
 import { debug } from "$lib/debug";

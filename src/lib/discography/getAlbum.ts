@@ -1,7 +1,7 @@
-import type { ImageFormat } from "bandcamp-fetch";
+import type { ImageFormat } from "@encode42/bandcamp-fetch";
 import type { Sources } from "$lib/types/discography/sources";
 import type { Album, FeaturedTrack } from "$lib/types/discography/entries";
-import bandcamp from "bandcamp-fetch";
+import bandcamp from "@encode42/bandcamp-fetch";
 import { getSpotify } from "./spotify";
 import { getLinks } from "./getLinks";
 import { localAlbums } from "$lib/data/discography/local";
