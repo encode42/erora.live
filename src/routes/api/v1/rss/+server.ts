@@ -26,7 +26,7 @@ export async function GET({ platform }) {
     const xml = builder.build({
         "rss": {
             "@version": "2.0",
-            "@xmlns:atom=": "http://www.w3.org/2005/Atom",
+            "@xmlns:atom": "http://www.w3.org/2005/Atom",
             "channel": {
                 "language": "en-us",
                 "title": "erora",
