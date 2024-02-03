@@ -7,11 +7,14 @@ import { dev } from "$app/environment";
 import { LocalStore } from "$lib/store/local";
 import { CloudflareStore } from "$lib/store/cloudflare";
 
+// todo: use worker to update every hour
+
 interface Populate {
     "discography": Discography,
     "lastUpdate": Date
 }
 
+const debugName = "Discography Getter";
 let currentPromise: Promise<Populate> | undefined;
 
 async function populate(): Promise<Populate> {
@@ -47,21 +50,30 @@ async function populate(): Promise<Populate> {
         "lastUpdate": new Date()
     }
 }
+
 export async function getDiscography(namespace?: KVNamespace): Promise<DiscographyObject> {
-    const debugName = "Discography Getter";
     const store = new (dev ? LocalStore : CloudflareStore)(namespace);
 
     const discography = await store.get<Discography>("discography");
-    const lastUpdate = await store.get<number>("lastUpdate");
-
-    if (discography && (lastUpdate && new Date().getTime() - lastUpdate < 3600000)) {
-        debug(debugName, "Discography store is valid. Returrning retrieved object.");
-
-        return {
-            discography
-        };
+    if (!discography) {
+        debug(debugName, "Discography does not exist. Fetching...");
+        return await update(store);
     }
 
+    const lastUpdate = await store.get<number>("lastUpdate") ?? 0;
+    if (new Date().getTime() - lastUpdate > 3600000) {
+        debug(debugName, "Updating discography store ~~in the background~~...");
+        await update(store);
+    }    
+
+    debug(debugName, "Discography store is valid. Returrning retrieved object.");
+    return {
+        discography,
+        lastUpdate
+    };
+}
+
+export async function update(store: LocalStore | CloudflareStore) {
     if (!currentPromise) {
         currentPromise = populate();
     }
@@ -69,10 +81,15 @@ export async function getDiscography(namespace?: KVNamespace): Promise<Discograp
     const populated = await currentPromise;
     currentPromise = undefined;
 
+    const now = new Date().getTime();
+
     await store.set("discography", populated.discography);
-    await store.set("lastUpdate", new Date().getTime());
-    
+    await store.set("lastUpdate", now);
+
+    debug(debugName, "Done!");
+
     return {
-        "discography": populated.discography
+        "discography": populated.discography,
+        "lastUpdate": now
     }
 }
