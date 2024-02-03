@@ -5,15 +5,19 @@
 
     export let data;
 
-    const logoFlipRotation = 342;
+    const logoFlipRotation: number = 342;
+    const intl: Intl.DateTimeFormat = new Intl.DateTimeFormat(undefined, {
+        "dateStyle": "long"
+    });
 
-    let logoInteractions = 0;
-    let logoRotation = 0;
+    let logoInteractions: number = 0;
+    let logoRotation: number = 0;
+    let logoFlipping: boolean;
     $: logoFlipping = logoRotation === logoFlipRotation;
 
     function bounceLogo() {
-        const random = Math.random();
-        const willFlip = logoInteractions > 3 && Math.round(random * 10) / 10 === 0.5;
+        const random: number = Math.random();
+        const willFlip: boolean = logoInteractions > 3 && Math.round(random * 10) / 10 === 0.5;
 
         logoRotation = willFlip ? logoFlipRotation : random * 20 - 10;
         logoInteractions++;
@@ -83,7 +87,7 @@
 
     <div class="discography">
         {#each data.discography as entry}
-            <DiscographyEntry {entry}/>
+            <DiscographyEntry {entry} {intl}/>
         {/each}
     </div>
 

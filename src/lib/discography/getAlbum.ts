@@ -72,6 +72,7 @@ export async function getAlbum(url: string, imageFormat: ImageFormat | undefined
             ...links
         },
         featuredTracks,
+        "published": new Date(albumInfo.releaseDate ?? 0).getTime(),
         "type": "album"
     }
 }

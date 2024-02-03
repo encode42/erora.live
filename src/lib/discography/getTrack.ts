@@ -33,6 +33,7 @@ export async function getTrack(url: string, imageFormat: ImageFormat | undefined
             "stream": trackInfo.streamUrl,
             ...links
         },
+        "published": new Date(trackInfo.releaseDate ?? 0).getTime(),
         "type": "track",
         "startAt": localTracks[trackInfo.name]?.startAt ?? 0,
         "endAt": localTracks[trackInfo.name]?.endAt ?? 30

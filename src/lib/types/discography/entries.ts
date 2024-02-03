@@ -14,7 +14,8 @@ export interface FeaturedTrack {
 export interface DiscographyBase {
     "title": string,
     "art"?: string,
-    "description"?: string
+    "description"?: string,
+    "published": number
 }
 
 export interface Album extends DiscographyBase {
@@ -35,5 +36,6 @@ export type DiscographyEntry = Album | Track;
 export type Discography = DiscographyEntry[];
 
 export interface DiscographyObject {
-    "discography": Discography
+    "discography": Discography,
+    "lastUpdate": number
 }

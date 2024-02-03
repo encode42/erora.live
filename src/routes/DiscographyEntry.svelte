@@ -11,6 +11,7 @@
 	import Destinations from "./Destinations.svelte";
 
     export let entry: DiscographyEntry;
+    export let intl: Intl.DateTimeFormat;
 
     const tweeningOptions = {
         "duration": 500,
@@ -123,6 +124,7 @@
     <div class="content">
         <div class="header">
             <h1>{entry.title}</h1>
+            <h4>{intl.format(new Date(entry.published))}</h4>
             <p>{entry.description}</p>
             <Destinations urls={entry.url}/>
         </div>
@@ -159,6 +161,11 @@
     h3 {
         font-size: 2.5cqmax;
         color: var(--color-secondary);
+    }
+
+    h4 {
+        font-size: 1.5cqmax;
+        color: var(--color-muted);
     }
 
     .discography-entry-wrapper {
