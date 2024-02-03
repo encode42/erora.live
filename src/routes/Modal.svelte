@@ -85,7 +85,7 @@
 	}
 
 	dialog::backdrop {
-		background: var(--color-primary);
+		background: #c6a0f6; /* hard-coded */
 		opacity: 0.5;
 	}
 
@@ -115,7 +115,7 @@
 		}
 
 		dialog::backdrop {
-			background: var(--color-background);
+			background: #24273a; /* hard-coded */
 			opacity: 1;
 		}
 	}
