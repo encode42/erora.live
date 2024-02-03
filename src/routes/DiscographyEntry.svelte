@@ -3,14 +3,14 @@
 </script>
 
 <script lang="ts">
-    import type { Album, Track } from "./+page.server";
+    import type { DiscographyEntry } from "$lib/types/discography/entries";
     import { tweened } from "svelte/motion";
 	import { sineOut } from "svelte/easing";
     import Modal from "./Modal.svelte";
     import Preview, { stopAll } from "./Preview.svelte";
 	import Destinations from "./Destinations.svelte";
 
-    export let entry: Album | Track;
+    export let entry: DiscographyEntry;
 
     const tweeningOptions = {
         "duration": 500,

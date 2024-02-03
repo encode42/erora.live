@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { IconBrandBandcamp } from "@tabler/icons-svelte";
-
     export let href: string;
     export let slim: boolean = false;
     export let color: string = "var(--color-primary)";

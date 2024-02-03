@@ -1,17 +1,17 @@
 <script lang="ts">
+    import type { Sources, StreamSources } from "$lib/types/discography/sources";
     import { IconBrandApple, IconBrandBandcamp, IconBrandSpotify, IconBrandYoutube } from "@tabler/icons-svelte";
-	import type { AlbumSources, TrackSources } from "./+page.server";
 	import Button from "./Button.svelte";
 
     type Destinations = {
-        [key in keyof Required<AlbumSources>]: {
+        [key in keyof Required<Sources>]: {
             "name": string,
             "color": string,
             "icon": typeof IconBrandBandcamp
         }
     }
 
-    export let urls: TrackSources | AlbumSources;
+    export let urls: StreamSources | Sources;
     export let slim: boolean = false;
 
     const destinations: Destinations = {

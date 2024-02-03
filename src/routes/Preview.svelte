@@ -11,14 +11,14 @@
 </script>
 
 <script lang="ts">
-    import type { AlbumSources, TrackSources } from "./+page.server";
+    import type { Sources, StreamSources } from "./+page.server";
     import { tweened } from "svelte/motion";
 	import { cubicOut } from "svelte/easing";
     import Destinations from "./Destinations.svelte";
     import { IconPlayerPlayFilled, IconPlayerStopFilled } from "@tabler/icons-svelte";
 
     export let src: string;
-    export let urls: AlbumSources | TrackSources | undefined = undefined;
+    export let urls: Sources | StreamSources | undefined = undefined;
     export let startAt: number;
     export let endAt: number;
 
