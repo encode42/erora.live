@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { IconBrandDiscord } from "@tabler/icons-svelte";
+	import { IconBrandDiscord, IconMail } from "@tabler/icons-svelte";
     import Button from "./Button.svelte";
     import DiscographyEntry from "./DiscographyEntry.svelte";
 
@@ -93,8 +93,8 @@
             <IconBrandDiscord/>
             discord
         </Button>
-        <Button href="mailto:me@erora.live" color="var(--ctp-macchiato-tan)">
-            <IconBrandDiscord/>
+        <Button href="mailto:me@erora.live" color="var(--ctp-macchiato-rosewater)">
+            <IconMail/>
             e-mail
         </Button>
     </div>

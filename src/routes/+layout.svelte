@@ -24,7 +24,7 @@
     </div>
     
     <footer>
-        powered by <a href="https://bandcamp.com">Bandcamp</a> and <a href="https://song.link">song.link</a> | <a href="https://github.com/encode42/erora.live">source code</a>
+        powered by <a href="https://song.link">song.link</a> | <a href="https://github.com/encode42/erora.live">source code</a>
     </footer>
 </div>
 
