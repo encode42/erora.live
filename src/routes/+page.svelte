@@ -22,7 +22,6 @@
     // TODO:
     // - Lint
     // - Boilerplate files
-    // - Spotify fallback
 </script>
 
 <main>

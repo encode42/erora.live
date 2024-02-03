@@ -33,3 +33,7 @@ export interface Track extends DiscographyBase {
 export type DiscographyEntry = Album | Track;
 
 export type Discography = DiscographyEntry[];
+
+export interface DiscographyObject {
+    "discography": Discography
+}
