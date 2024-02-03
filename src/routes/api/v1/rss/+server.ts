@@ -26,6 +26,7 @@ export async function GET({ platform }) {
     const xml = builder.build({
         "rss": {
             "@version": "2.0",
+            "@xmlns:atom=": "http://www.w3.org/2005/Atom",
             "channel": {
                 "language": "en-us",
                 "title": "erora",
@@ -36,9 +37,12 @@ export async function GET({ platform }) {
                     "url": "https://erora.live/badge.png",
                     "link": "https://erora.live"
                 },
-                "item": items,
+                "atom:link": {
+                    "@href": "https://erora.live/api/v1/rss"
+                },
                 "lastBuildDate": new Date(discography.lastUpdate).toUTCString(),
                 "ttl": 60 - Math.round((new Date().getTime() - discography.lastUpdate) / 60000),
+                "item": items
             }
         }
     });
