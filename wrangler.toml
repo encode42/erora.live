@@ -1,0 +1,7 @@
+name = "erora-live"
+main = ".svelte-kit/cloudflare"
+compatibility_date = "2023-12-01"
+
+kv_namespaces = [
+    { binding = "erora-live", id = "09c34657589742c5a5ba3de1e2eedd77", preview_id = "c9a4567782814790942cccba9275cae3" }
+]

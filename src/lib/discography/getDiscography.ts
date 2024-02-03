@@ -1,19 +1,24 @@
 import type { Discography, DiscographyObject } from "$lib/types/discography/entries";
-import type { Extra, ExtraObject } from "$lib/types/discography/extra";
 import bandcamp, { ImageFormatFilter } from "@encode42/bandcamp-fetch";
 import { getTrack } from "./getTrack";
 import { getAlbum } from "./getAlbum";
 import { debug } from "$lib/debug";
+import { dev } from "$app/environment";
+import { LocalStore } from "$lib/store/local";
+import { CloudflareStore } from "$lib/store/cloudflare";
 
-const discography: Discography = [];
-let extra: Extra | undefined;
+interface Populate {
+    "discography": Discography,
+    "lastUpdate": Date
+}
 
-let currentPromise: Promise<void> | undefined;
-let hasPopulated: boolean = false;
+let currentPromise: Promise<Populate> | undefined;
 
-async function populate() {
+async function populate(): Promise<Populate> {
     const debugName = "Discography Fetcher";
     debug(debugName, "Getting discography...");
+
+    const discography: Discography = [];
 
     const imageFormats = await bandcamp.image.getFormats(ImageFormatFilter.Album);
     const largeImageFormat = imageFormats.find(format => format.name === "art_app_large");
@@ -35,42 +40,39 @@ async function populate() {
         discography.push(discographyEntry);
     }
 
-    extra = {
+    debug(debugName, "Done!");
+
+    return {
+        discography,
         "lastUpdate": new Date()
     }
-
-    hasPopulated = true;
-
-    debug(debugName, "Done!");
 }
+export async function getDiscography(namespace?: KVNamespace): Promise<DiscographyObject> {
+    const debugName = "Discography Getter";
+    const store = new (dev ? LocalStore : CloudflareStore)(namespace);
 
-export async function getDiscography(includeExtra: true): Promise<ExtraObject>
-export async function getDiscography(includeExtra: false): Promise<DiscographyObject>
-export async function getDiscography(includeExtra: boolean): Promise<DiscographyObject | ExtraObject> {
-    if (extra && new Date().getTime() - extra.lastUpdate.getTime() > 3600000) {
-        hasPopulated = false;
+    const discography = await store.get<Discography>("discography");
+    const lastUpdate = await store.get<number>("lastUpdate");
 
-        debug("Discography Getter", "Invalidated discography population.");
-    }
+    if (discography && (lastUpdate && new Date().getTime() - lastUpdate < 3600000)) {
+        debug(debugName, "Discography store is valid. Returrning retrieved object.");
 
-    if (!hasPopulated) {
-        if (!currentPromise) {
-            currentPromise = populate();
-        }
-
-        await currentPromise;
-
-        currentPromise = undefined;
-    }
-
-    if (includeExtra && extra) {
         return {
-            discography,
-            extra
-        }
+            discography
+        };
     }
+
+    if (!currentPromise) {
+        currentPromise = populate();
+    }
+
+    const populated = await currentPromise;
+    currentPromise = undefined;
+
+    await store.set("discography", populated.discography);
+    await store.set("lastUpdate", new Date().getTime());
     
     return {
-        discography
-    };
+        "discography": populated.discography
+    }
 }
