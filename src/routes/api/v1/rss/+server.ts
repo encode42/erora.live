@@ -11,10 +11,10 @@ export async function GET({ platform }) {
     for (const entry of discography.discography) {
         items.push({
             "title": entry.title,
-            "description": entry.description?.replaceAll(/(\r\n)/gm, ""),
+            "description": entry.description?.replaceAll(/(\r\n)/gm, " "),
             "link": entry.url.bandcamp,
-            "pubDate": new Date(entry.published).toUTCString(),
-            "guid": entry.title
+            "guid": entry.url.bandcamp,
+            "pubDate": new Date(entry.published).toUTCString()
         });
     }
 

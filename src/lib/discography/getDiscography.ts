@@ -8,6 +8,7 @@ import { LocalStore } from "$lib/store/local";
 import { CloudflareStore } from "$lib/store/cloudflare";
 
 // todo: use worker to update every hour
+// alternatively, github action to rebuild
 
 interface Populate {
     "discography": Discography,
