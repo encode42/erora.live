@@ -104,11 +104,12 @@
     }
 
     button {
-        border: none;
-        border-radius: 100%;
         width: 100%;
 		aspect-ratio: 1;
+        border: none;
+        border-radius: 100%;
         padding: 0.5rem;
+        line-height: 0;
         background: var(--color-primary);
         color: var(--color-surface);
         transition: transform 0.1s var(--transition-snappy);

@@ -49,6 +49,7 @@
 		z-index: 5;
 		top: 1rem;
 		right: 1rem;
+		line-height: 0;
 		background: none;
 		border: none;
 		color: var(--color-text);
