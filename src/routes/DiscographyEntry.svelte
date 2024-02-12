@@ -31,6 +31,9 @@
     let translateButtonX = tweened(0, tweeningOptions);
     let translateButtonY = tweened(0, tweeningOptions);
 
+    $: innerWidth = 0;
+    $: smallScreen = innerWidth < 650;
+
     function resetTransformations() {
         brightnessWrapper.set(1);
 
@@ -50,6 +53,10 @@
     }
 
     function moveCard(key: string, wrapper: HTMLDivElement, width: number, height: number, x: number, y: number) {
+        if (smallScreen) {
+            return;
+        }
+
         brightnessWrapper.set(mapRelativity(y, height, 1.25, 0.75));
 
         let rotateY = mapRelativity(x, width, -25, 25);
@@ -62,9 +69,12 @@
     }
 </script>
 
+<svelte:window bind:innerWidth/>
+
 <div
     class="discography-entry-wrapper"
     class:focused
+    style:--scale-size={smallScreen ? "105%" : "115%"}
 >
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div
@@ -103,7 +113,7 @@
                 currentTarget = button;
                 focused = true;
             }}
-            on:blur={(event) => {
+            on:blur={() => {
                 focused = false;
             }}
             on:click={() => {
@@ -176,7 +186,7 @@
 
     .discography-entry-wrapper:hover, .discography-entry-wrapper.focused {
         z-index: 5;
-        transform: scale(115%);
+        transform: scale(var(--scale-size));
         filter: drop-shadow(0 0 4rem var(--color-primary));
     }
 
@@ -250,15 +260,24 @@
         padding-top: 1rem;
     }
 
-    @media (max-width: 1390px) {
+    @media (width <= 1390px) {
 		.discography-entry-button {
             font-size: 4cqmin;
         }
     }
 
-    @media (max-width: 750px) {
+    @media (width <= 650px) {
+        h1 {
+            font-size: 14cqmin;
+        }
+        h3 {
+            font-size: 9cqmin;
+        }
+        h4 {
+            font-size: 5cqmin;
+        }
 		.discography-entry-button {
-            font-size: 8cqmin;
+            font-size: 11cqmin;
         }
     }
 </style>

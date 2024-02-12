@@ -101,13 +101,13 @@
 		}
 	}
 
-	@media (max-width: 1390px) {
+	@media (width <= 1390px) {
 		dialog {
 			max-width: 85%;
 		}
 	}
 
-	@media (max-width: 860px) {
+	@media (width <= 860px) {
 		dialog {
 			max-width: 100%;
 			border-radius: 0;

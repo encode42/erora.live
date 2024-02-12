@@ -182,7 +182,7 @@
         }
     }
 
-    @media (max-width: 1390px) {
+    @media (width <= 1390px) {
         main {
             max-width: 65%;
         }
@@ -192,13 +192,13 @@
         }
 	}
 
-	@media (max-width: 860px) {
+	@media (width <= 860px) {
         main {
             max-width: 95%;
         }
 	}
 
-    @media (max-width: 750px) {
+    @media (width <= 650px) {
 		.discography {
             grid-template-columns: repeat(1, minmax(0, 1fr));
         }
