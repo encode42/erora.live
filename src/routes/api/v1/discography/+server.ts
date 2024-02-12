@@ -1,8 +1,10 @@
 import { getDiscography } from "$lib/discography/getDiscography";
 import { json } from "@sveltejs/kit";
 
-export async function GET({ platform }) {
-    const discography = await getDiscography(platform?.env?.["erora-live"]);
+export const prerender = true;
 
-    return json(discography);
+export async function GET() {
+	const discography = await getDiscography();
+
+	return json(discography);
 }

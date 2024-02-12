@@ -1,9 +1,9 @@
-import { getDiscography } from "$lib/discography/getDiscography"
+import { getDiscography } from "$lib/discography/getDiscography";
 
-export async function load({ platform }) {
-    const discography = await getDiscography(platform?.env?.["erora-live"]);
+export async function load() {
+	const discography = await getDiscography();
 
-    return {
-        "discography": discography.discography // todo: discography
-    };
+	return {
+		"discography": discography.discography // todo: discography
+	};
 }
