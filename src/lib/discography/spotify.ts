@@ -6,39 +6,39 @@ import { debug } from "$lib/debug";
 const spotifySdk = SpotifyApi.withClientCredentials(SPOTIFY_CLIENT_ID, SPOTIFY_SECRET);
 
 const spotifyDiscography: SpotifyAlbums = {};
-let hasPopulateed: boolean = false;
+let hasPopulateed = false;
 
 async function populate() {
-    const debugName = "Spotify Discography";
-    debug(debugName, "Populating Spotify discography entries...");
+	const debugName = "Spotify Discography";
+	debug(debugName, "Populating Spotify discography entries...");
 
-    const spotifyAlbums = await spotifySdk.artists.albums("52lfuNcFTbrdWz8EssQPCr");
+	const spotifyAlbums = await spotifySdk.artists.albums("52lfuNcFTbrdWz8EssQPCr");
 
-    for (const album of spotifyAlbums.items) {
-        const tracks: SpotifyTracks = {};
+	for (const album of spotifyAlbums.items) {
+		const tracks: SpotifyTracks = {};
 
-        debug(debugName, `Fetching tracks for album ${album.name}...`);
+		debug(debugName, `Fetching tracks for album ${album.name}...`);
 
-        const spotifyTracks = await spotifySdk.albums.tracks(album.id);
-        for (const track of spotifyTracks.items) {
-            tracks[track.name] = {
-                "uri": track.uri
-            };
-        }
+		const spotifyTracks = await spotifySdk.albums.tracks(album.id);
+		for (const track of spotifyTracks.items) {
+			tracks[track.name] = {
+				"uri": track.uri
+			};
+		}
 
-        spotifyDiscography[album.name] = {
-            "uri": album.uri,
-            tracks
-        }
-    }
+		spotifyDiscography[album.name] = {
+			"uri": album.uri,
+			tracks
+		};
+	}
 
-    hasPopulateed = true;
+	hasPopulateed = true;
 }
 
 export async function getSpotify() {
-    if (!hasPopulateed) {
-        await populate();
-    }
+	if (!hasPopulateed) {
+		await populate();
+	}
 
-    return spotifyDiscography;
+	return spotifyDiscography;
 }

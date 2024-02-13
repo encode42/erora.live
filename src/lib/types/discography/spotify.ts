@@ -1,16 +1,16 @@
 export interface SpotifyTrack {
-    "uri": string
+	"uri": string;
 }
 
 export interface SpotifyTracks {
-    [key: string]: SpotifyTrack
+	[key: string]: SpotifyTrack;
 }
 
 export interface SpotifyAlbum {
-    "uri": string,
-    "tracks": SpotifyTracks
+	"uri": string;
+	"tracks": SpotifyTracks;
 }
 
 export interface SpotifyAlbums {
-    [key: string]: SpotifyAlbum
+	[key: string]: SpotifyAlbum;
 }

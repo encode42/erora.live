@@ -1,6 +1,1 @@
-export const sources = [
-    "bandcamp",
-    "spotify",
-    "appleMusic",
-    "youtube"
-] as const;
+export const sources = ["bandcamp", "spotify", "appleMusic", "youtube"] as const;
