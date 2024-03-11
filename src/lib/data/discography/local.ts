@@ -119,6 +119,10 @@ export const localAlbums: LocalAlbums = {
 };
 
 export const localTracks: LocalTracks = {
+	"Similitude Bluff": {
+		"startAt": 148.5,
+		"endAt": 208
+	}
 	"Sky": {
 		"startAt": 136.82,
 		"endAt": 185.5
