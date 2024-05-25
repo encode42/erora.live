@@ -10,6 +10,7 @@
 	"main": "fetch/index.ts",
 	"private": true,
 	"type": "module",
+	"packageManager": "bun@1.1.10",
 	"scripts": {
 		"dev": "vite dev --host",
 		"preview": "vite preview",
