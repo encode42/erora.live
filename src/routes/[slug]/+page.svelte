@@ -17,7 +17,7 @@ const cover = `/releases/${data.release.slug}/cover`;
 	<meta property="og:title" content={data.release.label}/>
 	<meta name="description" content={data.description}/>
 	<meta property="og:description" content={data.description}/>
-	<meta property="og:image" content="/releases/{data.release.slug}/cover.avif"/>
+	<meta property="og:image" content="https://erora.live/releases/{data.release.slug}/cover.avif"/>
 	<meta name="theme-color" content={data.release.color}/>
 </svelte:head>
 

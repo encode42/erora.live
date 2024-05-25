@@ -2,7 +2,6 @@
 	import Button from "$lib/Button.svelte";
 	import releasesData from "$lib/releases.json";
 	import type { BuiltRelease } from "$types/discography/BuiltRelease";
-	import { flavors } from "@catppuccin/palette";
 	import { IconBrandDiscord, IconMail } from "@tabler/icons-svelte";
 	import Entry from "./Entry.svelte";
 
@@ -22,8 +21,6 @@ function bounceLogo() {
 	<meta property="og:title" content="erora"/>
 	<meta name="description" content="issues arise, bugs form. error is inevitable."/>
 	<meta property="og:description" content="issues arise, bugs form. error is inevitable."/>
-	<meta name="theme-color" content={flavors.macchiato.colors.mauve.hex}/>
-	<meta itemprop="image" property="og:image" content="/badge.png"/>
 </svelte:head>
 
 <svg
