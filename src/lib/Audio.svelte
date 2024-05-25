@@ -68,6 +68,7 @@ export function pause() {
 </script>
 
 <audio
+	preload="none"
 	bind:this={audioElement}
 	bind:currentTime
 	bind:duration
@@ -140,7 +141,7 @@ export function pause() {
 		transition-timing-function: var(--transition-snappy);
 		cursor: pointer;
 	}
-	
+
 	button.active {
 		background: var(--color-destructive);
 	}
