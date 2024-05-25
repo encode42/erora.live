@@ -20,7 +20,7 @@
 		"fetch": "bun . fetch",
 		"fetch:force": "bun run fetch --force",
 		"fetch:update": "bun . update",
-		"deploy": "bun run fetch && bun run build:force"
+		"deploy": "bun run fetch && bun run build:force && vite build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.7.2",
