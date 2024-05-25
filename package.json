@@ -14,13 +14,12 @@
 	"scripts": {
 		"dev": "vite dev --host",
 		"preview": "vite preview",
-		"build": "bun run build:static && vite build",
-		"build:static": "bun . build",
-		"build:force": "bun . build --force",
+		"build": "vite build",
+		"static": "bun . build",
+		"static:force": "bun run static --force",
 		"fetch": "bun . fetch",
 		"fetch:force": "bun run fetch --force",
-		"fetch:update": "bun . update",
-		"deploy": "bun run fetch && bun run build:force && vite build"
+		"update": "bun . update"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.7.2",

@@ -38,7 +38,7 @@ export async function build() {
 		log.info(`Converting cover art for ${meta.label}...`);
 		const coverPath = join(resourcePath, "cover.jpg");
 		const cover = await sharp(coverPath)
-			.resize(800)
+			.resize(600)
 			.avif({
 				"effort": 9,
 				"chromaSubsampling": "4:2:0"

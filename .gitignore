@@ -51,5 +51,3 @@ lerna-debug.log*
 /resources/**/audio/
 /resources/**/cover.jpg
 /resources/isComplete
-/static/releases/
-/src/lib/releases/
