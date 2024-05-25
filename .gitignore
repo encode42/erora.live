@@ -48,6 +48,6 @@ lerna-debug.log*
 /.wrangler/
 
 # Generated resource files
-/resources/**/audio/
-/resources/**/cover.jpg
+/resources/**/*.mp3
+/resources/**/*.jpg
 /resources/isComplete
