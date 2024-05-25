@@ -1,0 +1,18 @@
+{
+	"slug": "inner-self-realization",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/inner-self-realization",
+		"spotify": "https://open.spotify.com/track/3VXJKjGhjYOuaKa5XXlOCc",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1740422550?i=1740422557&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=_0VfTNvHXdE",
+		"songLink": "https://song.link/s/3VXJKjGhjYOuaKa5XXlOCc"
+	},
+	"label": "Inner Self-Realization",
+	"description": "A short and simple piano piece featuring various motifs from the tracks prior. This almost didn't make the cut due to an unexpected deadline, yet I was able to sneak it in! I'm glad, because despite its simplicity, it's a great closer for the album.",
+	"featured": true,
+	"why": "All throughout my musical journey, I have struggled to find what makes a song \"good\". Even during this album's development, I would push tracks further and further, even if it hurt the end result. This is the track I held back with. I understood that more did not equal better. I now understand that complexity and instrument count are not what make a good song.",
+	"trim": {
+		"start": "1:31",
+		"duration": 40
+	}
+}

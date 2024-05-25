@@ -1,0 +1,18 @@
+{
+	"slug": "amphitrite",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/amphitrite",
+		"spotify": "https://open.spotify.com/track/2fKzEXuJb0McNAtWyGZeJ4",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1740422550?i=1740422554&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=TayI8nEyjOk",
+		"songLink": "https://song.link/s/2fKzEXuJb0McNAtWyGZeJ4"
+	},
+	"label": "Amphitrite",
+	"description": "The focus for this track is realism. I had started to source, and even create, sample libraries based on physical instruments. Prior to this song's creation, I only used synthesized instruments.\n\nI was scared to try anything more. I didn't believe that I could pull off realistic sounding instrumentation. And yet, through trial and error, many revisions, and lots of manual automation, I believe I've done it.",
+	"featured": true,
+	"why": "When listening to the demos exported throughout this song's development, I'm proud of how this track ended up. Not only did it motivate me to start using real instrument samples, it also went through a journey of its own. Though, looking back, I would have changed how the percussion was programmed.",
+	"trim": {
+		"start": "2:02",
+		"duration": 40
+	}
+}

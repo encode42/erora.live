@@ -46,3 +46,10 @@ lerna-debug.log*
 
 # Cloudflare
 /.wrangler/
+
+# Generated resource files
+/resources/**/audio/
+/resources/**/cover.jpg
+/resources/isComplete
+/static/releases/
+/src/lib/releases/

@@ -1,0 +1,18 @@
+{
+	"slug": "inferred-dreams",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/inferred-dreams",
+		"spotify": "https://open.spotify.com/track/6VngLd80KD0OpoLK9Ja4Jx",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1740422550?i=1740422551&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=hCSs-muxSjI",
+		"songLink": "https://song.link/s/6VngLd80KD0OpoLK9Ja4Jx"
+	},
+	"label": "Inferred Dreams",
+	"description": "Lena Raine's philosophy, with a focus on softness and quietness, took control of this track. I intentionally pushed myself to embrace the power of silence, and though I couldn't push myself as much as I'd prefer, compared to my previous tracks, I have achieved my goal.\n\nOnly after I had finished this track did I realize it's subconscious inspiration: C418's remix of \"Atempause\". I loved their rendition of the track. It had been a few months since I had last heard it, so I unfortunately didn't make the connection as soon as I'd like.",
+	"featured": true,
+	"why": "Featuring randomly generated percussion and an overlapping chord pattern, this track began as my answer to Lena Raine's \"Stand Tall\". I noticed how her track mastered the concept of silence, which I wanted to reproduce. This track started with two widely spaced chords, which were then sped up and layered over the original chord pattern.",
+	"trim": {
+		"start": "1:43",
+		"duration": 38
+	}
+}

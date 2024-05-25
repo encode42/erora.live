@@ -1,0 +1,18 @@
+{
+	"slug": "planadaxic",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/planadaxic",
+		"spotify": "https://open.spotify.com/track/4Av7G8IGCaXES1YO6FOShl",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1723753633?i=1723753943&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=yVAna6Kii_4",
+		"songLink": "https://song.link/s/4Av7G8IGCaXES1YO6FOShl"
+	},
+	"label": "Planadaxic",
+	"description": "This track was based on what I had created during a sound design jam session. The \"beeps\" you hear during the majority of the song were created during that session and were originally designed to be played back much faster. I tried to form a track around it but wasn't pleased with how it sounded. I had the idea to slow the whole project down, resulting in this eight-minute long epic.",
+	"featured": true,
+	"why": "The most computationally complex track I've produced. The aforementioned \"beeps\" alone overloaded my system. This marked the beginning of my massive homemade instrument patch journey!",
+	"trim": {
+		"start": "6:38",
+		"duration": 33
+	}
+}

@@ -1,206 +1,173 @@
 <script lang="ts">
+	import Button from "$lib/Button.svelte";
+	import releasesData from "$lib/releases.json";
+	import type { BuiltRelease } from "$types/discography/BuiltRelease";
+	import { flavors } from "@catppuccin/palette";
 	import { IconBrandDiscord, IconMail } from "@tabler/icons-svelte";
-    import Button from "./Button.svelte";
-    import DiscographyEntry from "./DiscographyEntry.svelte";
+	import Entry from "./Entry.svelte";
 
-    export let data;
+	const releases = releasesData as BuiltRelease[];
+const intl = new Intl.DateTimeFormat("default", {
+	"dateStyle": "long"
+});
 
-    const logoFlipRotation: number = 342;
-    const intl: Intl.DateTimeFormat = new Intl.DateTimeFormat(undefined, {
-        "dateStyle": "long"
-    });
-
-    let logoInteractions: number = 0;
-    let logoRotation: number = 0;
-    let logoFlipping: boolean;
-    $: logoFlipping = logoRotation === logoFlipRotation;
-
-    function bounceLogo() {
-        const random: number = Math.random();
-        const willFlip: boolean = logoInteractions > 3 && Math.round(random * 10) / 10 === 0.5;
-
-        logoRotation = willFlip ? logoFlipRotation : random * 20 - 10;
-        logoInteractions++;
-    }
-
-    // TODO:
-    // - Lint
-    // - Boilerplate files
+let logoRotation = 0;
+function bounceLogo() {
+	logoRotation = Math.random() * 20 - 10;
+}
 </script>
 
-<main>
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-    <svg
-        tabindex="0"
-        viewBox="0 0 800 189"
-        width="100%"
-        class="logo"
-        style:--logo-rotation="{logoRotation}deg"
-        style:--logo-rotation-speed="{logoFlipping ? 1.5 : 0.5}s"
-        on:focus={() => {
-            bounceLogo();
-        }}
-        on:mousedown={(event) => {
-            event.stopImmediatePropagation();
-            event.preventDefault();
-        }}
-        on:mouseenter={() => {
-            bounceLogo();
-        }}
-    >
-    <defs>
-        <clipPath clipPathUnits="userSpaceOnUse" id="e">
-            <path d="m-3.37-37.04h97.8v255.33h-97.8zm36.67 0h212.41v129.96h-212.41z"/>
-        </clipPath>
-        <clipPath clipPathUnits="userSpaceOnUse" id="r">
-            <path d="m149.44-37.04h97.8v255.33h-97.8zm36.68 0h212.4v129.96h-212.4z"/>
-        </clipPath>
-        <clipPath clipPathUnits="userSpaceOnUse" id="a">
-            <path d="m455.06-37.04h97.8v255.33h-97.8zm36.68 0h212.41v129.96h-212.41z"/>
-        </clipPath>
-    </defs>
-    <style>
-        .circle {
-            fill: none;
-            stroke: currentColor;
-            stroke-miterlimit: 100;
-            stroke-width: 36.7
-        } 
-        .line {
-            fill: currentColor
-        } 
-    </style>
-        <path class="circle" clip-path="url(#e)" d="m94.4 170.9c-42.2 0-76.4-34.2-76.4-76.5 0-42.2 34.2-76.4 76.4-76.4 42.3 0 76.4 34.2 76.4 76.4 0 42.3-34.1 76.5-76.4 76.5z"/>
-        <path class="line" d="m189.2 73v36.7h-166.6v-36.7c45.9 0 166.6 0 166.6 0z"/>
-        <path class="circle" clip-path="url(#r)" d="m247.2 170.9c-42.2 0-76.4-34.2-76.4-76.5 0-42.2 34.2-76.4 76.4-76.4 42.3 0 76.4 34.2 76.4 76.4 0 42.3-34.1 76.5-76.4 76.5z"/>
-        <path class="circle" d="m400.1 170.9c-42.3 0-76.5-34.2-76.5-76.5 0-42.2 34.2-76.4 76.5-76.4 42.2 0 76.4 34.2 76.4 76.4 0 42.3-34.2 76.5-76.4 76.5z"/>
-        <path class="circle" clip-path="url(#a)" d="m552.9 170.9c-42.3 0-76.4-34.2-76.4-76.5 0-42.2 34.1-76.4 76.4-76.4 42.2 0 76.4 34.2 76.4 76.4 0 42.3-34.2 76.5-76.4 76.5z"/>
-        <path class="circle" d="m705.7 170.9c-42.3 0-76.4-34.2-76.4-76.5 0-42.2 34.1-76.4 76.4-76.4 42.2 0 76.4 34.2 76.4 76.4 0 42.3-34.2 76.5-76.4 76.5z"/>
-        <path class="line" d="m763.7 94.4h36.7v96.4h-36.7z"/>
-    </svg>
+<svelte:head>
+	<title>erora</title>
+	<meta property="og:title" content="erora"/>
+	<meta name="description" content="issues arise, bugs form. error is inevitable."/>
+	<meta property="og:description" content="issues arise, bugs form. error is inevitable."/>
+	<meta name="theme-color" content={flavors.macchiato.colors.mauve.hex}/>
+	<meta itemprop="image" property="og:image" content="/badge.png"/>
+</svelte:head>
 
-    <div class="about">
-        <p>issues arise, bugs form. error is inevitable.</p>
-        <p>Ambient-electronic works aiming to imitate the likes of progressive rock and influential indie video game soundtracks while implementing personal styles.</p>
-    </div>
+<svg
+	tabindex="0"
+	viewBox="0 0 800 189"
+	role="button"
+	style:--logo-rotation="{logoRotation}deg"
+	on:mousedown|stopPropagation|preventDefault
+	on:mouseenter={() => {
+		bounceLogo();
+	}}
+	on:focus={() => {
+		bounceLogo();
+	}}
+>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="e">
+			<path d="m-3.37-37.04h97.8v255.33h-97.8zm36.67 0h212.41v129.96h-212.41z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="r">
+			<path d="m149.44-37.04h97.8v255.33h-97.8zm36.68 0h212.4v129.96h-212.4z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="a">
+			<path d="m455.06-37.04h97.8v255.33h-97.8zm36.68 0h212.41v129.96h-212.41z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.circle {
+			fill: none;
+			stroke: currentColor;
+			stroke-miterlimit: 100;
+			stroke-width: 36.7
+		}
+		.line {
+			fill: currentColor
+		}
+	</style>
+	<path class="circle" clip-path="url(#e)" d="m94.4 170.9c-42.2 0-76.4-34.2-76.4-76.5 0-42.2 34.2-76.4 76.4-76.4 42.3 0 76.4 34.2 76.4 76.4 0 42.3-34.1 76.5-76.4 76.5z"/>
+	<path class="line" d="m189.2 73v36.7h-166.6v-36.7c45.9 0 166.6 0 166.6 0z"/>
+	<path class="circle" clip-path="url(#r)" d="m247.2 170.9c-42.2 0-76.4-34.2-76.4-76.5 0-42.2 34.2-76.4 76.4-76.4 42.3 0 76.4 34.2 76.4 76.4 0 42.3-34.1 76.5-76.4 76.5z"/>
+	<path class="circle" d="m400.1 170.9c-42.3 0-76.5-34.2-76.5-76.5 0-42.2 34.2-76.4 76.5-76.4 42.2 0 76.4 34.2 76.4 76.4 0 42.3-34.2 76.5-76.4 76.5z"/>
+	<path class="circle" clip-path="url(#a)" d="m552.9 170.9c-42.3 0-76.4-34.2-76.4-76.5 0-42.2 34.1-76.4 76.4-76.4 42.2 0 76.4 34.2 76.4 76.4 0 42.3-34.2 76.5-76.4 76.5z"/>
+	<path class="circle" d="m705.7 170.9c-42.3 0-76.4-34.2-76.4-76.5 0-42.2 34.1-76.4 76.4-76.4 42.2 0 76.4 34.2 76.4 76.4 0 42.3-34.2 76.5-76.4 76.5z"/>
+	<path class="line" d="m763.7 94.4h36.7v96.4h-36.7z"/>
+</svg>
 
-    <div class="discography">
-        {#each data.discography as entry}
-            <DiscographyEntry {entry} {intl}/>
-        {/each}
-    </div>
+<p class="tagline">issues arise, bugs form. error is inevitable.</p>
+<p>Ambient-electronic works aiming to imitate the likes of progressive rock and influential indie video game soundtracks while implementing personal styles.</p>
 
-    <div class="links">
-        <Button href="https://erora.live/discord" color="var(--ctp-macchiato-blue)">
-            <IconBrandDiscord/>
-            discord
-        </Button>
-        <Button href="mailto:me@erora.live" color="var(--ctp-macchiato-rosewater)">
-            <IconMail/>
-            e-mail
-        </Button>
-    </div>
-</main>
+<section class="entries">
+	{#each releases as release}
+		<Entry
+			{release}
+			{intl}
+		/>
+	{/each}
+</section>
+
+<div class="buttons">
+	<Button
+			href="https://erora.live/discord"
+			color="var(--ctp-macchiato-blue)"
+	>
+		<IconBrandDiscord/>
+		discord
+	</Button>
+	<Button
+			href="mailto:me@erora.live"
+			color="var(--ctp-macchiato-rosewater)"
+	>
+		<IconMail/>
+		e-mail
+	</Button>
+</div>
 
 <style>
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 42%;
-        gap: 2rem;
-        padding-top: 1rem;
-    }
-
-    .logo {
-        --color-current: var(--color-text);
-        z-index: 10;
-        color: var(--color-current);
-        filter: drop-shadow(0 0 1.25rem var(--color-current));
-        transition-property: color, filter, transform;
-        transition-duration: var(--logo-rotation-speed);
-        transition-timing-function: cubic-bezier(0.15, 0.5, 0, 2);
-        animation: flicker 7s infinite;
-    }
-
-    .logo:hover, .logo:focus-visible {
-        --color-current: var(--color-primary);
-        filter: drop-shadow(0 0 2rem var(--color-current)) !important;
-        transform: scale(125%) rotate(var(--logo-rotation));
-    }
-
-    .logo:focus {
-        outline: none;
-    }
-
-    .about {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem
-    }
-
-    .about p {
-        margin: 0;
-        text-align: center;
-        color: var(--color-subtle);
-    }
-
-    .about p:first-of-type {
-        font-family: var(--font-stylized);
-        font-weight: 800;
-        color: var(--color-text);
-    }
-
-    .discography {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 1rem;
-        width: 100%
-    }
-
-    .links {
-        width: 100%;
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-    }
-
-    .links :global(*) {
-        flex-grow: 1;
-    }
-
-    @keyframes flicker {
-        0% {
-            filter: drop-shadow(0 0 1.25rem var(--color-current));
-        }
-        50% {
-            filter: drop-shadow(0 0 0.75rem var(--color-current)) brightness(92%);
-        }
-        100% {
-            filter: drop-shadow(0 0 1.25rem var(--color-current));
-        }
-    }
-
-    @media (width <= 1390px) {
-        main {
-            max-width: 65%;
-        }
-
-		.discography {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+	svg {
+		padding-top: 2.5rem;
+		filter: drop-shadow(0 0 1.5rem var(--color-text));
+		color: var(--color-text);
+		transition-property: scale, rotate, transform, color, filter;
+		transition-duration: 0.5s;
+		transition-timing-function: cubic-bezier(0.15, 0.5, 0, 2);
 	}
 
-	@media (width <= 860px) {
-        main {
-            max-width: 95%;
-        }
+	p {
+		font-size: 2cqmin;
+		text-align: center;
 	}
 
-    @media (width <= 650px) {
-		.discography {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-    }
+	.tagline {
+		font-family: var(--font-header);
+		font-weight: 800;
+		color: var(--color-secondary);
+	}
+
+	.entries {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		width: 100%;
+		padding-top: 2.5rem;
+		padding-bottom: 4rem;
+	}
+
+	.buttons {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	@media (width <= 1390px) {
+		.entries {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (width > 800px) {
+		svg:hover, svg:focus {
+			scale: 125%;
+			rotate: var(--logo-rotation);
+			transform: translateY(1.5rem);
+			filter: drop-shadow(0 0 3rem var(--color-primary));
+			color: var(--color-primary);
+		}
+	}
+
+	@media (width <= 800px) {
+		svg {
+			padding-top: 1rem;
+		}
+
+		p {
+			font-size: 2.5cqmax;
+		}
+
+		.entries {
+			padding-top: 1rem;
+			padding-bottom: 2rem;
+		}
+
+		.entries {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
 </style>

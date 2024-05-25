@@ -1,0 +1,18 @@
+{
+	"slug": "so-far",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/so-far",
+		"spotify": "https://open.spotify.com/track/6bJwgegbgiEFSIgR4btZCI",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1723753633?i=1723753941&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=WH4M7Yho5Lo",
+		"songLink": "https://song.link/s/6bJwgegbgiEFSIgR4btZCI"
+	},
+	"label": "So Far",
+	"description": "After I had completed Visionary, I was in the mood to create something calmer. This ended up taking an orchestral direction, which I ended up scrapping due to it not fitting in well within the rest of the album. Instead, I deleted every instrument, keeping only the notes I had placed down, and created a percussion track. This new version of the track had a similar vibe to the rest of the album, which I'm quite proud of.",
+	"featured": true,
+	"why": "It's important to understand when it might be time to cut your losses and start over. I had considered just pushing onwards with the initial sound of the track, yet I decided that I wouldn't be as happy with the final product, which wasn't worth it.",
+	"trim": {
+		"start": "2:50",
+		"duration": 38
+	}
+}

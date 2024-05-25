@@ -1,0 +1,76 @@
+:root {
+	--color-background: var(--ctp-macchiato-base);
+	--color-text: var(--ctp-macchiato-text);
+
+	--color-primary: var(--ctp-macchiato-mauve);
+	--color-secondary: var(--ctp-macchiato-green);
+
+	--color-actionable: var(--ctp-macchiato-green);
+	--color-destructive: var(--ctp-macchiato-red);
+
+	--font-header: "JetBrains Mono Variable", monospace;
+	--font-text: "Inter Variable", sans-serif;
+
+	--transition-snappy: cubic-bezier(0, 0.65, 0, 1);
+}
+
+html {
+	background: var(--color-background);
+	color: var(--color-text);
+	font-family: var(--font-text);
+	scrollbar-gutter: stable;
+}
+
+html:has(dialog[open]) {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-header);
+	font-weight: 800;
+	color: var(--color-primary)
+}
+
+p {
+	font-size: 1.25rem;
+	line-height: 150%;
+}
+
+a {
+	display: inline-block;
+	border-radius: 1rem;
+	color: var(--color-primary);
+	text-decoration-thickness: 0.1rem;
+	transition-property: color, scale, background;
+	transition-duration: 1s;
+	transition-timing-function: var(--transition-snappy);
+}
+
+a:hover, a:focus {
+	scale: 110%;
+	color: var(--color-secondary);
+	text-shadow: 0 0 1rem var(--color-secondary);
+}
+
+p, a {
+	font-weight: 200;
+}
+
+::-webkit-scrollbar {
+	width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 1rem;
+	background: var(--color-primary)
+}
+
+::selection {
+	background: var(--color-primary);
+	color: var(--color-background);
+}

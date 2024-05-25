@@ -1,0 +1,15 @@
+{
+	"type": "album",
+	"slug": "awry",
+	"released": 1712102400000,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/album/awry",
+		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
+		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+	},
+	"label": "AWRY",
+	"description": "This album is a collection of demos, B-sides, and my early musical releases. It contains tracks from albums that have already been released on Bandcamp, such as Wisp and Midten, as well as previously unheard songs.\n\nTrack quality varies throughout the entire album, as they've been made anytime in the past three years! I've still attempted to order the album to flow nicely between eras and genres. Whether I have succeeded is up to you.\n\nI'm proud of where I am now, but I often struggle to realize my own skills. Reflecting on where I came from definitely helps—I'm able to see that I am improving, no matter how I feel. Hopefully, these tracks can help others who may struggle during their own personal journey!\n\nEach track will specify the era they were recorded in, the DAW they were built with, and a small description as to why I made the tracks.\n\n• \"Progressive\" era are demos recorded afterwards. No finished tracks were produced during this time.\n• \"Momentum Deceived\" era contains B-sides from the album.\n• \"Midten\" era signifies tracks before May 12, 2023. These were made to be more melodic and concise.\n• \"Wisp\" era signifies tracks before April 24, 2022. Consists of various experiments I've done to further improve my songwriting and producing skills.\n• \"Collection\" era signifies tracks before November 24, 2022. These tracks were my introduction to public songwriting.",
+	"color": "#fa8a04"
+}

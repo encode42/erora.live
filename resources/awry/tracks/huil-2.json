@@ -1,0 +1,18 @@
+{
+	"slug": "huil-2",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/huil-2",
+		"spotify": "https://open.spotify.com/album/0mSofIZKFMCvT2we17hdjZ",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mIrMnfT55xXs2eIngNC3G1RXcAwGCBqcE",
+		"songLink": "https://album.link/s/0mSofIZKFMCvT2we17hdjZ"
+	},
+	"label": "Huil",
+	"description": "This track originated from the urge to produce a track unlike anything I've made prior. Directly inspired by D&B, this track aimed to provide a \"full\" sound, with sample-type percussion and instruments.\n\nRecorded during the Midten era. Produced on GarageBand for iOS.",
+	"featured": true,
+	"why": "It's important to branch out and try new things. This was my method of doing so. In the process, I learned a lot about both the target genre and my own personal styles. This may not be D&B, but the influence is there!",
+	"trim": {
+		"start": "2:55",
+		"duration": 30
+	}
+}

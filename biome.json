@@ -5,7 +5,11 @@
 	},
 	"linter": {
 		"enabled": true,
-		"ignore": ["./public", "./build", "./dist"],
+		"ignore": [
+			"./public",
+			"./build",
+			"./dist"
+		],
 		"rules": {
 			"recommended": true,
 			"complexity": {
@@ -13,20 +17,72 @@
 			},
 			"performance": {
 				"noDelete": "off"
+			},
+			"style": {
+				"useBlockStatements": "error",
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false
+					}
+				},
+				"useShorthandArrayType": "error",
+				"noImplicitBoolean": "error",
+				"noNegationElse": "error",
+				"useCollapsedElseIf": "error",
+				"useFilenamingConvention": {
+					"level": "error",
+					"options": {
+						"requireAscii": true,
+						"filenameCases": [
+							"camelCase",
+							"PascalCase"
+						]
+					}
+				}
+			},
+			"suspicious": {
+				"noConsoleLog": "warn"
+			},
+			"correctness": {
+				"noUnusedImports": "error"
 			}
 		}
 	},
 	"formatter": {
 		"enabled": true,
-		"ignore": ["./public", "./build", "./dist"],
-		"indentStyle": "tab"
+		"ignore": [
+			"./public",
+			"./build",
+			"./dist"
+		],
+		"indentStyle": "tab",
+		"formatWithErrors": true
 	},
 	"javascript": {
 		"formatter": {
 			"quoteProperties": "preserve",
 			"trailingComma": "none",
 			"lineWidth": 192,
-			"indentStyle": "tab"
+			"indentStyle": "tab",
+			"bracketSameLine": true
 		}
-	}
+	},
+	"overrides": [
+		{
+			"include": [
+				"*.svelte"
+			],
+			"linter": {
+				"rules": {
+					"style": {
+						"useConst": "off"
+					},
+					"correctness": {
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	]
 }

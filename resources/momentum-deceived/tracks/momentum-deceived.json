@@ -1,0 +1,17 @@
+{
+    "slug": "momentum-deceived",
+    "links": {
+        "bandcamp": "https://erora.bandcamp.com/track/momentum-deceived",
+        "spotify": "https://open.spotify.com/track/7vlPBIDq30uCfVyEljciIa",
+        "youtube": "https://www.youtube.com/watch?v=sxTj8XoZn0M",
+        "songLink": "https://song.link/s/7vlPBIDq30uCfVyEljciIa"
+    },
+    "label": "Momentum Deceived",
+    "description": "Featuring everything I've learned during this album's development, Momentum Deceived leads us into what's to come. With its realistic drum patterns powered by BFD3, this track paves the way for a less electronic album in the future.",
+    "featured": true,
+    "why": "Upon starting this track, my biggest goal was to produce realistic percussion. This is something I had attempted in the past, but in every case, I felt as though it was too complicated yet repetitive. I used BFD3's visualizations to think like a drummer, and write complex - yet not impossible patterns.",
+    "trim": {
+        "start": "2:35",
+        "duration": 40
+    }
+}

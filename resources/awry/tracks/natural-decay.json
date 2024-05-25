@@ -1,0 +1,18 @@
+{
+	"slug": "natural-decay",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/natural-decay",
+		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
+		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+	},
+	"label": "Natural Decay",
+	"description": "This is the first track I have released publicly. It kicked off my music production career. Its theme (and working title) was \"Ambient Mystery\", though that theme changed throughout its development. Biggest inspiration was C418, as heard in the percussion.\n\nRecorded during the Collection era. Produced on GarageBand for iOS.",
+	"featured": true,
+	"why": "I still believe this track holds up to this day. I hadn't learned the art of simplicity yet, and I believed that my future tracks had to be more complex in order to prove my ability. Yet, often, the opposite is true, and this track proves it.",
+	"trim": {
+		"start": "2:15",
+		"duration": 30
+	}
+}

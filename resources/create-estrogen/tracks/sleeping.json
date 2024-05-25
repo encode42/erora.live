@@ -1,0 +1,17 @@
+{
+	"slug": "sleeping",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/sleeping",
+		"spotify": "https://open.spotify.com/track/6Rqf9WekV0JOwGC1jrgg76",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1740422550?i=1740422555&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"songLink": "https://song.link/s/6Rqf9WekV0JOwGC1jrgg76"
+	},
+	"label": "Sleeping",
+	"description": "A track that was almost entirely produced and mastered in a single day. It doesn't exactly follow the styles of Lena Raine or C418, and was rather made as I went.\n\nDespite its extremely short production time, and the fact that it was rushed, I still enjoy the end result quite a bit! It's a unique track in the album, almost serving as a transition between my older style (as seen in G03C) and the rest of the album.",
+	"featured": true,
+	"why": "Shortly after this album was released, the soundtrack for Minecraft 1.21 was also announced. I struggled to make the connection between this track and any tracks from Minecraft or Celeste until the new Minecraft tracks were released. In retrospect, I believe that I've captured the vibe of the new, extraordinary track, \"Deeper\". Has Lena Raine's style already impacted my own musical styles this much, or was it an amazing coincidence?",
+	"trim": {
+		"start": "4:07",
+		"duration": 50
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"slug": "d",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/d",
+		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
+		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+	},
+	"label": "Dø",
+	"description": "A dark, ambient electronic song inspired by the likes of video game soundtracks such as Celeste. Designed to play in the background, this track attempts to mix my typically complex personal styles with the art of simplicity.\n\nRecorded during the Midten era. Produced on GarageBand for iOS.",
+	"featured": true,
+	"why": "Prior to this track, many of my songs were very repetitive. Most of them were built off of the same chorus, melody, ambience, etc. I wanted to change this, and experimented with splitting this track into different parts, and returning to the original chorus at the end.",
+	"trim": {
+		"start": "3:19",
+		"duration": 50
+	}
+}

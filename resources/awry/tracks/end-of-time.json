@@ -1,0 +1,18 @@
+{
+	"slug": "end-of-time",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/end-of-time",
+		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
+		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+	},
+	"label": "End of Time",
+	"description": "The experiments have come to a close. A success has been made. It's time to move on.\n\nThis track closes out Wisp, and contains many of the techniques I've learned throughout my experimentation. It's also structured in the same way that the first (written) song in Wisp was.\n\nI was greatly inspired by the Mirror's Edge soundtrack, as well as Fiber Bundles from Animusic.\n\nRecorded during the Wisp era. Produced on Ableton Live.",
+	"featured": true,
+	"why": "This track unknowingly paved the way for my future album, Momentum Deceived. Its retro vibe and heavy compression made their way into my personal mixing style.",
+	"trim": {
+		"start": "3:54",
+		"duration": 30
+	}
+}

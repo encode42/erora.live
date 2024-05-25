@@ -1,0 +1,18 @@
+{
+	"slug": "valley",
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/valley",
+		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
+		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+	},
+	"label": "Valley",
+	"description": "A mix between an electronic and orchestral style. One of my first orchestral compositions, featuring many layers of strings and even a bassoon.\n\nI used this track to practice orchestral songwriting, while incorporating my own styles. The percussion is also focused on being realistic and humanly playable.\n\nRecorded during the Wisp era. Produced on GarageBand for iOS.",
+	"featured": true,
+	"why": "Produced after Continuum, another track in a similar style, this was my attempt at polishing my realistic percussion style. I wanted to implement more parts of the drum kit into my patterns, resulting in heavy use of the toms.",
+	"trim": {
+		"start": "1:27",
+		"duration": 20
+	}
+}
