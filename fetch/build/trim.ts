@@ -1,9 +1,48 @@
 import { spawnSync } from "bun";
 import ffmpegPath from "ffmpeg-static";
-import { join } from "node:path";
+import { format, join } from "node:path";
 import { ImpossibleError } from "../error/ImpossibleError";
 import { log } from "../log";
 import type { FeaturedTrack, SingleTrack } from "../types/discography/Track";
+
+interface FfmpegOptions {
+	[flag: string]: number | string;
+}
+
+interface SpawnOptions extends FfmpegOptions {
+	"i": string,
+	"output": string
+}
+
+function spawn(options: SpawnOptions) {
+	if (!ffmpegPath) {
+		throw new ImpossibleError();
+	}
+
+	const { output, ...ffmpegOptions } = options;
+
+	options["fflags"] ??= "+bitexact";
+	options["flags:a"] ??= "+bitexact";
+
+	const command = [
+		ffmpegPath,
+		"-y",
+	];
+
+	for (const [flag, value] of Object.entries(ffmpegOptions)) {
+		command.push(`-${flag}`, value.toString());
+	}
+
+	command.push(output);
+	log.debug(command.join(" "));
+
+	const process = spawnSync(command);
+	if (process.exitCode !== 0) {
+		throw `${process.exitCode}: ${process.stderr.toString()}`;
+	}
+
+	log.debug(process.stdout.toString());
+}
 
 export function trim(resourcePath: string, publicPath: string, track: SingleTrack | FeaturedTrack) {
 	log.info(`Trimming audio file ${track.label}...`);
@@ -12,35 +51,22 @@ export function trim(resourcePath: string, publicPath: string, track: SingleTrac
 	const startTime = Math.max(Number.parseInt(minutes) * 60 + Number.parseInt(seconds) - 5, 0);
 	const duration = track.trim.duration + 10; // 5 second fade-in, 5 second fade-out
 
-	if (!ffmpegPath) {
-		throw new ImpossibleError();
-	}
-
 	const fileName = join(publicPath, track.slug);
 
-	const ogg = spawnSync([
-		ffmpegPath,
-		"-y",
-		"-ss",
-		startTime.toString(),
-		"-i",
-		join(resourcePath, `${track.slug}.mp3`),
-		"-t",
-		duration.toString(),
-		"-af",
-		`afade=type=in:start_time=0:duration=5:curve=ipar,afade=out:st=${duration - 5}:d=5:curve=cub`,
-		`${fileName}.ogg`
-	]);
-	if (!ogg.success) {
-		throw `${ogg.exitCode}: ${ogg.stderr.toString()}`;
-	}
+	spawn({
+		"ss": startTime.toString(),
+		"i": format({
+			"dir": resourcePath,
+			"name": track.slug,
+			"ext": "mp3"
+		}),
+		"t": duration,
+		"af": `volume=0.25,afade=type=in:start_time=0:duration=5:curve=ipar,afade=out:st=${duration - 5}:d=5:curve=cub`,
+		"output": `${fileName}.ogg`
+	});
 
-	log.debug(ogg.stdout.toString());
-
-	const mp3 = spawnSync([ffmpegPath, "-y", "-i", `${fileName}.ogg`, `${fileName}.mp3`]);
-	if (!mp3.success) {
-		throw `${mp3.exitCode}: ${mp3.stderr.toString()}`;
-	}
-
-	log.debug(mp3.stdout.toString());
+	spawn({
+		"i": `${fileName}.ogg`,
+		"output": `${fileName}.mp3`
+	});
 }
