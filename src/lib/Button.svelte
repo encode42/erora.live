@@ -2,18 +2,19 @@
 export let title: string | undefined = undefined;
 export let color = "var(--color-primary)";
 export let href: string;
-export let target = "_blank";
 export let slim = false;
 export let empty = false;
+export let fullWidth = false;
 </script>
 
 <a
     class:slim
 	class:empty
+	class:fullWidth
     style:--color={color}
     role="button"
+	target={href.startsWith("/") ? undefined : "_blank"}
 	{title}
-	{target}
     {href}
 >
     <slot/>
@@ -21,6 +22,7 @@ export let empty = false;
 
 <style>
     a {
+		box-sizing: border-box;
         border: 1px solid var(--color);
         padding: 1rem;
         font-family: var(--font-header);
@@ -34,6 +36,7 @@ export let empty = false;
 
     a:hover, a:focus {
 		z-index: 5;
+		scale: 115%;
         background: var(--color);
         color: var(--color-background);
 		text-shadow: none;
@@ -66,6 +69,10 @@ export let empty = false;
 
 	.empty :global(svg) {
 		padding-right: 0;
+	}
+
+	.fullWidth {
+		width: 100%;
 	}
 
 	@media (width <= 800px) {

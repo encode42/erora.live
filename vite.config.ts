@@ -2,10 +2,15 @@ import { sveltekit } from "@sveltejs/kit/vite";
 import MagicString from "magic-string";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
-	"plugins": [sveltekit(), tablerSvelteImportOptimizer()],
-	"clearScreen": false
+	"clearScreen": false,
+	"plugins": [
+		sveltekit(),
+		tablerSvelteImportOptimizer(),
+		ViteImageOptimizer()
+	],
 });
 
 // https://github.com/tabler/tabler-icons/issues/669#issuecomment-1993756128

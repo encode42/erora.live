@@ -1,9 +1,8 @@
 <script lang="ts">
-	import Audio from "$lib/Audio.svelte";
-	import Button from "$lib/Button.svelte";
-	import ArrowLeft from "@tabler/icons-svelte/IconArrowLeft.svelte";
+import Audio from "$lib/Audio.svelte";
+import BackHome from "$lib/BackHome.svelte";
 
-	export let data;
+export let data;
 
 const intl = new Intl.DateTimeFormat("default", {
 	"dateStyle": "long"
@@ -70,16 +69,9 @@ const cover = `/releases/${data.release.slug}/cover`;
 	/>
 {/if}
 
-<Button href="/" target="_self">
-	<ArrowLeft/>
-	Back home
-</Button>
+<BackHome/>
 
 <style>
-	:global(body) {
-		padding-bottom: 1rem;
-	}
-
 	.banner {
 		width: 100%;
 	}
@@ -89,82 +81,27 @@ const cover = `/releases/${data.release.slug}/cover`;
 		width: 100%;
 		height: 24rem;
 		object-fit: cover;
-		margin-top: 2rem;
-		margin-bottom: 1rem;
 		transition-property: height;
 		transition-timing-function: var(--transition-snappy);
 		transition-duration: 1s;
 	}
 
-	h1, h2, h3 {
-		margin: 0;
-	}
-
 	h1 {
 		position: relative;
-		font-size: 4cqmax;
-		color: var(--color-primary);
 	}
 
 	h2 {
-		font-size: 2.5cqmax;
 		color: var(--color);
-	}
-
-	h2 + p {
-		margin-top: 0.25rem;
 	}
 
 	h3 {
 		margin-top: -0.5rem;
-		font-size: 1.75cqmax;
 		color: var(--color-secondary);
-	}
-
-	p {
-		font-size: 1cqmax;
-		color: var(--color-text);
-	}
-
-	@media (width <= 1390px) {
-		h1 {
-			font-size: 6cqmin;
-		}
-
-		h2 {
-			font-size: 4cqmin;
-		}
-
-		h3 {
-			font-size: 3cqmin;
-		}
-
-		p {
-			font-size: 2cqmin;
-		}
 	}
 
 	@media (width <= 800px) {
 		.banner img {
 			height: unset;
-		}
-
-		h1 {
-			font-size: 12cqmin;
-			line-height: 100%;
-			padding-bottom: 3cqmin;
-		}
-
-		h2 {
-			font-size: 7cqmin;
-		}
-
-		h3 {
-			font-size: 4.5cqmin;
-		}
-
-		p {
-			font-size: 4cqmin;
 		}
 
 		img {

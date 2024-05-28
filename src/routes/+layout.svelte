@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { page } from "$app/stores";
-	import { flavors } from "@catppuccin/palette";
+import { page } from "$app/stores";
+import { flavors } from "@catppuccin/palette";
 
-	import "@catppuccin/palette/css/catppuccin.css";
-	import "@fontsource-variable/jetbrains-mono";
-	import "@fontsource-variable/inter";
-	import "./global.css";
+import "@catppuccin/palette/css/catppuccin.css";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/inter";
+import "./global.css";
 </script>
 
 <svelte:head>

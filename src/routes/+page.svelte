@@ -3,7 +3,10 @@
 	import releasesData from "$lib/releases.json";
 	import type { BuiltRelease } from "$types/discography/BuiltRelease";
 	import { IconBrandDiscord, IconMail } from "@tabler/icons-svelte";
-	import Entry from "./Entry.svelte";
+import Button from "$lib/Button.svelte";
+import releasesData from "$lib/releases.json";
+import type { BuiltRelease } from "$types/discography/BuiltRelease";
+import { IconBrandDiscord, IconMail, IconQuestionMark } from "@tabler/icons-svelte";
 
 	const releases = releasesData as BuiltRelease[];
 const intl = new Intl.DateTimeFormat("default", {
@@ -68,7 +71,6 @@ function bounceLogo() {
 </svg>
 
 <p class="tagline">issues arise, bugs form. error is inevitable.</p>
-<p>Ambient-electronic works aiming to imitate the likes of progressive rock and influential indie video game soundtracks while implementing personal styles.</p>
 
 <section class="entries">
 	{#each releases as release}
@@ -78,6 +80,11 @@ function bounceLogo() {
 		/>
 	{/each}
 </section>
+
+<Button href="/about" fullWidth>
+	<IconQuestionMark/>
+	about
+</Button>
 
 <div class="buttons">
 	<Button
@@ -98,7 +105,7 @@ function bounceLogo() {
 
 <style>
 	svg {
-		padding-top: 2.5rem;
+		position: relative;
 		filter: drop-shadow(0 0 1.5rem var(--color-text));
 		color: var(--color-text);
 		transition-property: scale, rotate, transform, color, filter;
@@ -122,15 +129,15 @@ function bounceLogo() {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 1rem;
 		width: 100%;
-		padding-top: 2.5rem;
-		padding-bottom: 4rem;
+		padding-top: 1rem;
+		padding-bottom: 3rem;
 	}
 
 	.buttons {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 1rem;
-		padding-bottom: 1rem;
+		padding-top: 1rem;
 	}
 
 	@media (width <= 1390px) {
@@ -141,9 +148,10 @@ function bounceLogo() {
 
 	@media (width > 800px) {
 		svg:hover, svg:focus {
+			z-index: 8;
 			scale: 125%;
 			rotate: var(--logo-rotation);
-			transform: translateY(1.5rem);
+			transform: translateY(3rem);
 			filter: drop-shadow(0 0 3rem var(--color-primary));
 			color: var(--color-primary);
 		}

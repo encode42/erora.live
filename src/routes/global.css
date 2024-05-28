@@ -28,16 +28,39 @@ html:has(dialog[open]) {
 body {
 	margin: 0;
 	overflow-x: hidden;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
+	margin: 0;
 	font-family: var(--font-header);
 	font-weight: 800;
-	color: var(--color-primary)
+}
+
+h1 {
+	font-size: 4cqmax;
+	color: var(--color-primary);
+}
+
+h2, h3 {
+	color: var(--color-secondary)
+}
+
+h2 {
+	font-size: 2.5cqmax;
+}
+
+h1 + p, h2 + p {
+	margin-top: 0.25rem;
+}
+
+h3 {
+	font-size: 1.75cqmax;
 }
 
 p {
-	font-size: 1.25rem;
+	font-size: 1cqmax;
 	line-height: 150%;
 }
 
@@ -52,7 +75,7 @@ a {
 }
 
 a:hover, a:focus {
-	scale: 110%;
+	scale: 105%;
 	color: var(--color-secondary);
 	text-shadow: 0 0 1rem var(--color-secondary);
 }
@@ -73,4 +96,42 @@ p, a {
 ::selection {
 	background: var(--color-primary);
 	color: var(--color-background);
+}
+
+@media (width <= 1390px) {
+	h1 {
+		font-size: 6cqmin;
+	}
+
+	h2 {
+		font-size: 4cqmin;
+	}
+
+	h3 {
+		font-size: 3cqmin;
+	}
+
+	p {
+		font-size: 2cqmin;
+	}
+}
+
+@media (width <= 800px) {
+	h1 {
+		font-size: 12cqmin;
+		line-height: 100%;
+		padding-bottom: 3cqmin;
+	}
+
+	h2 {
+		font-size: 7cqmin;
+	}
+
+	h3 {
+		font-size: 4.5cqmin;
+	}
+
+	p {
+		font-size: 4cqmin;
+	}
 }

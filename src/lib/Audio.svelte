@@ -13,58 +13,58 @@ export function pause() {
 </script>
 
 <script lang="ts">
-    import { cubicOut } from "svelte/easing";
-    import { tweened } from "svelte/motion";
-	import { IconBrandApple, IconBrandBandcamp, IconBrandSpotify, IconBrandYoutube, IconExternalLink, IconPlayerPlayFilled, IconPlayerStopFilled } from "@tabler/icons-svelte";
-    import type { Links } from "$types/Links";
-	import Button from "$lib/Button.svelte";
+import { cubicOut } from "svelte/easing";
+import { tweened } from "svelte/motion";
+import { IconBrandApple, IconBrandBandcamp, IconBrandSpotify, IconBrandYoutube, IconExternalLink, IconPlayerPlayFilled, IconPlayerStopFilled } from "@tabler/icons-svelte";
+import type { Links } from "$types/Links";
+import Button from "$lib/Button.svelte";
 
-	export let src: string;
-	export let color: string;
-	export let links: Links;
+export let src: string;
+export let color: string;
+export let links: Links;
 
-	let audioElement: HTMLAudioElement;
+let audioElement: HTMLAudioElement;
 
-	let paused = true;
-	let currentTime = 0;
-	let duration: number | undefined;
+let paused = true;
+let currentTime = 0;
+let duration: number | undefined;
 
-	const progress = tweened(0, {
-		"duration": 1000,
-		"easing": cubicOut
-	});
+const progress = tweened(0, {
+	"duration": 1000,
+	"easing": cubicOut
+});
 
-	$: if (duration) {
-		progress.set(currentTime / duration);
+$: if (duration) {
+	progress.set(currentTime / duration);
+}
+
+const buttons = {
+	"bandcamp": {
+		"label": "Bandcamp",
+		"color": "teal",
+		"icon": IconBrandBandcamp
+	},
+	"appleMusic": {
+		"label": "Apple Music",
+		"color": "text",
+		"icon": IconBrandApple
+	},
+	"spotify": {
+		"label": "Spotify",
+		"color": "green",
+		"icon": IconBrandSpotify
+	},
+	"youtube": {
+		"label": "YouTube",
+		"color": "red",
+		"icon": IconBrandYoutube
+	},
+	"songLink": {
+		"label": "song.link",
+		"color": "blue",
+		"icon": IconExternalLink
 	}
-
-	const buttons = {
-		"bandcamp": {
-			"label": "Bandcamp",
-			"color": "teal",
-			"icon": IconBrandBandcamp
-		},
-		"appleMusic": {
-			"label": "Apple Music",
-			"color": "text",
-			"icon": IconBrandApple
-		},
-		"spotify": {
-			"label": "Spotify",
-			"color": "green",
-			"icon": IconBrandSpotify
-		},
-		"youtube": {
-			"label": "YouTube",
-			"color": "red",
-			"icon": IconBrandYoutube
-		},
-		"songLink": {
-			"label": "song.link",
-			"color": "blue",
-			"icon": IconExternalLink
-		}
-	}
+}
 </script>
 
 <audio
@@ -110,11 +110,11 @@ export function pause() {
 <div class="links">
 	{#each Object.entries(links) as [source, url]}
 		<Button
-				title={buttons[source].label}
-				color="var(--ctp-macchiato-{buttons[source].color})"
-				href={url}
-				slim
-				empty
+			title={buttons[source].label}
+			color="var(--ctp-macchiato-{buttons[source].color})"
+			href={url}
+			slim
+			empty
 		>
 			<svelte:component this={buttons[source].icon}/>
 		</Button>
@@ -136,7 +136,7 @@ export function pause() {
 		border-radius: 50%;
 		color: var(--color-background);
 		background: var(--color-actionable);
-		transition-property: background, transform;
+		transition-property: background, scale;
 		transition-duration: 1s;
 		transition-timing-function: var(--transition-snappy);
 		cursor: pointer;
@@ -148,8 +148,7 @@ export function pause() {
 
 	button:hover, button:focus-visible {
 		background: var(--color);
-		transform: scale(115%);
-		outline: none;
+		scale: 115%;
 	}
 
 	button :global(svg) {
