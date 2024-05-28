@@ -1,17 +1,11 @@
 <script lang="ts">
-	import Button from "$lib/Button.svelte";
-	import releasesData from "$lib/releases.json";
-	import type { BuiltRelease } from "$types/discography/BuiltRelease";
-	import { IconBrandDiscord, IconMail } from "@tabler/icons-svelte";
 import Button from "$lib/Button.svelte";
 import releasesData from "$lib/releases.json";
 import type { BuiltRelease } from "$types/discography/BuiltRelease";
 import { IconBrandDiscord, IconMail, IconQuestionMark } from "@tabler/icons-svelte";
+import Entry from "$lib/Entry.svelte";
 
-	const releases = releasesData as BuiltRelease[];
-const intl = new Intl.DateTimeFormat("default", {
-	"dateStyle": "long"
-});
+const releases = releasesData as BuiltRelease[];
 
 let logoRotation = 0;
 function bounceLogo() {
@@ -74,10 +68,7 @@ function bounceLogo() {
 
 <section class="entries">
 	{#each releases as release}
-		<Entry
-			{release}
-			{intl}
-		/>
+		<Entry {release}/>
 	{/each}
 </section>
 

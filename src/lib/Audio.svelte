@@ -68,7 +68,7 @@ const buttons = {
 </script>
 
 <audio
-	preload="none"
+	preload="metadata"
 	bind:this={audioElement}
 	bind:currentTime
 	bind:duration

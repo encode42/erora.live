@@ -2,6 +2,8 @@ import releasesData from "$lib/releases.json";
 import type { BuiltRelease } from "$types/discography/BuiltRelease";
 import { redirect } from "@sveltejs/kit";
 
+// TODO: total tracks, total duration
+
 const releases = releasesData as BuiltRelease[];
 
 export const prerender = true;
