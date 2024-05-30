@@ -1,12 +1,16 @@
 {
-    "slug": "visionary",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/visionary",
-        "spotify": "https://open.spotify.com/track/7sGzHtoN0kw6BkTd051niv",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1723753633?i=1723753940&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/watch?v=1gDxVfidRd8",
-        "songLink": "https://song.link/s/7sGzHtoN0kw6BkTd051niv"
-    },
-    "label": "Visionary",
-    "description": "Despite my self-proclaimed failure with Self-Deception, I still wanted a grungy, evil, heavy track on the album. This track pushed me to experiment with pitch bends, microtonality, and a generally heavier soundscape."
+	"slug": "visionary",
+	"released": 1704067200000,
+	"duration": 236.391,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/visionary",
+		"spotify": "https://open.spotify.com/track/7sGzHtoN0kw6BkTd051niv",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1723753633?i=1723753940&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=1gDxVfidRd8",
+		"songLink": "https://song.link/s/7sGzHtoN0kw6BkTd051niv"
+	},
+	"label": "Visionary",
+	"description": [
+		"Despite my self-proclaimed failure with Self-Deception, I still wanted a grungy, evil, heavy track on the album. This track pushed me to experiment with pitch bends, microtonality, and a generally heavier soundscape."
+	]
 }

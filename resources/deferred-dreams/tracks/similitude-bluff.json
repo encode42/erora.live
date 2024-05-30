@@ -1,12 +1,18 @@
 {
 	"slug": "similitude-bluff",
+	"released": 1715817600000,
+	"duration": 241.5,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/similitude-bluff"
 	},
 	"label": "Similitude Bluff",
-	"description": "This track was produced with the idea of a boss battle in mind. Integrating a new motif, structure was a priority, to set a stage for future tracks in this style.",
+	"description": [
+		"This track was produced with the idea of a boss battle in mind. Integrating a new motif, structure was a priority, to set a stage for future tracks in this style."
+	],
 	"featured": true,
-	"why": "Weird time signatures can be cool! However, I failed the last time I tried to compose in an unusual time signature. This track changed that. I managed to program percussion that sounds real (to me), and ideally you're able to feel the \"edge\" brought on by it!",
+	"why": [
+		"Weird time signatures can be cool! However, I failed the last time I tried to compose in an unusual time signature. This track changed that. I managed to program percussion that sounds real (to me), and ideally you're able to feel the \"edge\" brought on by it!"
+	],
 	"trim": {
 		"start": "1:46",
 		"duration": 42

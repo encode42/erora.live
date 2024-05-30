@@ -13,7 +13,3 @@ function env(key: string): string {
 export function string(key: string): string {
 	return env(key);
 }
-
-export function number(key: string): number {
-	return Number.parseInt(env(key));
-}

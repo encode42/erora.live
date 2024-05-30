@@ -1,12 +1,18 @@
 {
-    "slug": "so-far-demo",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/so-far-demo",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "So Far - Demo",
-    "description": "The last version of So Far before I had entirely rewritten it. This features my original ambient orchestral vision for the song.\n\nRecorded during the Momentum Deceived era. Produced on Bitwig Studio."
+	"slug": "so-far-demo",
+	"released": 1712102400000,
+	"duration": 299.678,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/so-far-demo",
+		"spotify": "https://open.spotify.com/track/3hNrOaqngQ9VuAU5Cs7Jm0",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325405&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=_hJ5fwgyU34",
+		"songLink": "https://song.link/s/3hNrOaqngQ9VuAU5Cs7Jm0"
+	},
+	"label": "So Far (Demo)",
+	"description": [
+		"The last version of So Far before I had entirely rewritten it. This features my original ambient orchestral vision for the song.",
+		"",
+		"Recorded during the Momentum Deceived era. Produced on Bitwig Studio."
+	]
 }

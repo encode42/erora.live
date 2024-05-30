@@ -1,12 +1,18 @@
 {
-    "slug": "crust-demo",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/crust-demo",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "Crust (Demo)",
-    "description": "Though being quite unfinished, with multiple mixing mistakes and oddities, this track paved way for a new sound style.\n\nRecorded during the Progressive era. Produced on Bitwig Studio."
+	"slug": "crust-demo",
+	"released": 1712102400000,
+	"duration": 331.636,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/crust-demo",
+		"spotify": "https://open.spotify.com/track/4dvpj1LjQqpsLLG5if6Zv8",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325398&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=vd5NdgvMt9E",
+		"songLink": "https://song.link/s/4dvpj1LjQqpsLLG5if6Zv8"
+	},
+	"label": "Crust (Demo)",
+	"description": [
+		"Though being quite unfinished, with multiple mixing mistakes and oddities, this track paved way for a new sound style.",
+		"",
+		"Recorded during the Progressive era. Produced on Bitwig Studio."
+	]
 }

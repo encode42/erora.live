@@ -1,12 +1,20 @@
 {
-    "slug": "societal-cash",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/societal-cash",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "Societal Cash",
-    "description": "This track, like the last, has also been inspired by progressive rock. It also has elements taken from electronica and normal rock.\n\nI used this track to practice composing in a 7/8 time signature, as well as experiment with some synthetic guitar sounds.\n\nRecorded during the Wisp era. Produced on Ableton Live."
+	"slug": "societal-cash",
+	"released": 1712102400000,
+	"duration": 226.282,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/societal-cash",
+		"spotify": "https://open.spotify.com/track/6WbtRanW0Di91oCf0Unckm",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325400&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=81aEcp6byYg",
+		"songLink": "https://song.link/s/6WbtRanW0Di91oCf0Unckm"
+	},
+	"label": "Societal Cash",
+	"description": [
+		"This track, like the last, has also been inspired by progressive rock. It also has elements taken from electronica and normal rock.",
+		"",
+		"I used this track to practice composing in a 7/8 time signature, as well as experiment with some synthetic guitar sounds.",
+		"",
+		"Recorded during the Wisp era. Produced on Ableton Live."
+	]
 }

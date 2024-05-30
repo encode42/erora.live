@@ -1,16 +1,13 @@
-import type { BuiltTrack } from "../types/discography/BuiltRelease";
-import type { TrackRelease } from "../types/discography/Release";
 import { flavors } from "@catppuccin/palette";
-import { trim } from "./trim";
+import type { BuiltTrack, LocalTrack } from "../types/discography/Track";
+import { trimTrack } from "./trim";
 
-export function buildTrack(track: TrackRelease, resourcePath: string, publicPath: string): BuiltTrack {
-	trim(resourcePath, publicPath, track);
+export function buildTrack(meta: LocalTrack): BuiltTrack {
+	trimTrack(meta);
 
-	const { trim: _, ...trimlessTrack } = track;
+	const { trim: _, ...trimlessTrack } = meta.release;
 
-	return {
-		...trimlessTrack,
-		"color": trimlessTrack.color ?? flavors.macchiato.colors.mauve.hex,
-		"description": track.description?.split("\n")
-	};
+	trimlessTrack.color ??= flavors.macchiato.colors.mauve.hex;
+
+	return trimlessTrack;
 }

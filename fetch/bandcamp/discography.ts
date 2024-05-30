@@ -1,75 +1,46 @@
 import type { Album, Track } from "@encode42/bandcamp-fetch";
-import { opendir, rm, writeFile } from "node:fs/promises";
-import { ImpossibleError } from "../error/ImpossibleError";
 import { log } from "../log";
-import { resourcesPath, updateOrder } from "../resource/ensure";
-import { completePath, getHash } from "../util/isComplete";
-import { getAlbum } from "./album";
+import { getAlbumPaths } from "../resource/album";
+import type { MetaAlbum, MetaAlbumTrack } from "../types/discography/Album";
+import type { MetaTrack } from "../types/discography/Track";
+import { ImpossibleError } from "../util/ImpossibleError";
+import { getAlbum, getAlbumTrack } from "./album";
 import { client } from "./client";
 import { getTrack } from "./track";
 
-interface Force {
-	"force": boolean;
+export async function fetchMeta(url: string): Promise<MetaAlbum | MetaTrack | MetaAlbumTrack> {
+	log.debug(`Fetching metadata for "${url}" from discography...`);
+
+	const bandcampRelease = await client[new URL(url).pathname.startsWith("/album/") ? "album" : "track"].getInfo({
+		url
+	});
+
+	if (!bandcampRelease.url) {
+		throw new ImpossibleError();
+	}
+
+	if (bandcampRelease.type === "track" && bandcampRelease.album) {
+		const slug = getSlug(bandcampRelease.album);
+		const paths = await getAlbumPaths(slug);
+
+		return await getAlbumTrack(bandcampRelease.url, paths);
+	}
+
+	if (bandcampRelease.type === "album") {
+		return await getAlbum(bandcampRelease.url);
+	}
+
+	return await getTrack(bandcampRelease.url);
 }
 
-interface GetRelease extends Force {
-	"release": Album | Track;
-}
-
-function wrapProcess<T, Return = void>(process: (options: T) => Promise<Return>) {
-	return async (options: T) => {
-		await rm(completePath, {
-			"force": true
-		});
-
-		const result = await process(options);
-
-		const currentHash = await getHash();
-		await writeFile(completePath, currentHash);
-
-		return result;
-	};
-}
-
-export const getRelease = wrapProcess<GetRelease, { "slug": string }>(async ({ release, force }) => {
+export function getSlug(release: Album | NonNullable<Track["album"]> | Track) {
 	if (!release.url) {
 		throw new ImpossibleError();
 	}
 
-	return await (release.type === "track" ? getTrack : getAlbum)(release.url, force);
-});
+	const slug = release.url.split("/").at(-1) ?? release.name;
 
-export const getDiscography = wrapProcess<Force>(async ({ force }) => {
-	log.info("Processing Bandcamp discography...");
+	log.debug(`Detected slug: ${release.url} -> ${slug}`);
 
-	const bandcampDiscography = await client.band.getDiscography({
-		"bandUrl": "https://erora.bandcamp.com"
-	});
-
-	const order: string[] = [];
-	for (const bandcampRelease of bandcampDiscography) {
-		const release = await getRelease({
-			"release": bandcampRelease,
-			force
-		});
-
-		order.push(release.slug);
-	}
-
-	await updateOrder(order);
-
-	const directory = await opendir(resourcesPath);
-	for await (const entry of directory) {
-		if (entry.isFile()) {
-			continue;
-		}
-
-		if (order.includes(entry.name)) {
-			continue;
-		}
-
-		log.warn(`Resource "${entry.name}" no longer exists online! It's recommended to remove this directory.`);
-	}
-
-	log.info("Finished processing!");
-});
+	return slug;
+}

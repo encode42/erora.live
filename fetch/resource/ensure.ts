@@ -10,12 +10,11 @@ export let order: string[] = await ensureFile(orderPath, []);
 
 export async function updateOrder(current: string[]) {
 	order = current;
-
-	await writeFile(orderPath, JSON.stringify(current, undefined, 4));
+	await ensureFile(orderPath, current, true);
 }
 
 export async function ensureDirectory(path: string) {
-	log.debug(`Ensuring the existence of directory ${path}...`);
+	log.debug(`Ensuring the existence of directory "${path}"...`);
 
 	try {
 		await access(path);
@@ -30,7 +29,7 @@ export async function ensureDirectory(path: string) {
 }
 
 export async function ensureFile<T = unknown>(path: string, fallback: T, force = false) {
-	log.debug(`Ensuring the existence of file ${path}...`);
+	log.debug(`Ensuring the existence of file "${path}"...`);
 
 	let fileExists: boolean;
 	try {
@@ -42,7 +41,7 @@ export async function ensureFile<T = unknown>(path: string, fallback: T, force =
 	}
 
 	if (!fileExists || force) {
-		await writeFile(path, JSON.stringify(fallback, undefined, 4));
+		await writeFile(path, `${JSON.stringify(fallback, undefined, "\t")}\n`);
 
 		log.debug("Created new file with defaults!");
 		return fallback;

@@ -1,12 +1,18 @@
 {
-    "slug": "mantle-demo",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/mantle-demo",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "Mantle (Demo)",
-    "description": "Featuring a fake bass (guitar with a low pass filter), and placeholder percussion, this track is very unfinished.\n\nRecorded during the Progressive era. Produced on Bitwig Studio."
+	"slug": "mantle-demo",
+	"released": 1712102400000,
+	"duration": 308.211,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/mantle-demo",
+		"spotify": "https://open.spotify.com/track/2Nc40ex0rH0Tov6gBp3MIA",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325397&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=JqFDKmU8SZQ",
+		"songLink": "https://song.link/s/2Nc40ex0rH0Tov6gBp3MIA"
+	},
+	"label": "Mantle (Demo)",
+	"description": [
+		"Featuring a fake bass (guitar with a low pass filter), and placeholder percussion, this track is very unfinished.",
+		"",
+		"Recorded during the Progressive era. Produced on Bitwig Studio."
+	]
 }

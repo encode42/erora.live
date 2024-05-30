@@ -1,5 +1,7 @@
 {
 	"slug": "aurum-berry",
+	"released": 1712620800000,
+	"duration": 402.914,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/aurum-berry",
 		"spotify": "https://open.spotify.com/track/5PpUWZ2zmGXSRcIptNGDEZ",
@@ -8,11 +10,11 @@
 		"songLink": "https://song.link/s/5PpUWZ2zmGXSRcIptNGDEZ"
 	},
 	"label": "Aurum Berry",
-	"description": "Essentially being a remix of Lena Raine's \"Resurrections\", this track aims to closely recreate the vibe and structure of Celeste. What better way to accomplish that, than to steal!?\n\nI'm quite proud of how I mixed the styles of Lena Raine, C418, and my own while sticking to a familiar sound. What you don't hear are the tens of demos I had unsuccessfully produced before this.\n\nOf course, without using Resurrections as inspiration, this track would be nothing. Thank you, Lena Raine, for releasing such an amazing song, and teaching others how it was composed.",
-	"featured": true,
-	"why": "When composing tracks for the mod, I knew I wanted to capture a Celeste-like vibe. I thought it would be a great idea to implement a motif from one of the most iconic songs, \"Resurrections\". I initially didn't want to make a track *too* similar to it, yet I ended up fully committing and producing a reimagining of the track.",
-	"trim": {
-		"start": "3:49",
-		"duration": 42
-	}
+	"description": [
+		"Essentially being a remix of Lena Raine's \"Resurrections\", this track aims to closely recreate the vibe and structure of Celeste. What better way to accomplish that, than to steal!?",
+		"",
+		"I'm quite proud of how I mixed the styles of Lena Raine, C418, and my own while sticking to a familiar sound. What you don't hear are the tens of demos I had unsuccessfully produced before this.",
+		"",
+		"Of course, without using Resurrections as inspiration, this track would be nothing. Thank you, Lena Raine, for releasing such an amazing song, and teaching others how it was composed."
+	]
 }

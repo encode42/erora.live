@@ -1,12 +1,24 @@
 {
-    "slug": "g03c",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/g03c",
-        "spotify": "https://open.spotify.com/track/6VMnJBMj3atZHpfgPDlvjS",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1725817519?i=1725817520&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/watch?v=_RdD1IpZFWw",
-        "songLink": "https://song.link/s/6VMnJBMj3atZHpfgPDlvjS"
-    },
-    "label": "G03C",
-    "description": "As this track is designed to be played in-game through a music disc, it took on a dance vibe, which players may enjoy! It's entirely based on my own styles, with little direct influence from the prior primary sources."
+	"slug": "g03c",
+	"released": 1712620800000,
+	"duration": 303.36,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/g03c",
+		"spotify": "https://open.spotify.com/track/6VMnJBMj3atZHpfgPDlvjS",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1725817519?i=1725817520&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=_RdD1IpZFWw",
+		"songLink": "https://song.link/s/6VMnJBMj3atZHpfgPDlvjS"
+	},
+	"label": "G03C",
+	"description": [
+		"As this track is designed to be played in-game through a music disc, it took on a dance vibe, which players may enjoy! It's entirely based on my own styles, with little direct influence from the prior primary sources."
+	],
+	"featured": true,
+	"why": [
+		"Produced months prior to any other track on this album, this track helped me move on from Momentum Deceived. I didn't know where to go next, and randomly decided to contact a mod author I knew. Months later, my musical palette entirely changed."
+	],
+	"trim": {
+		"start": "3:20",
+		"duration": 50
+	}
 }

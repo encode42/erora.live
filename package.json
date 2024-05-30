@@ -1,6 +1,6 @@
 {
   "name": "erora.live",
-  "description": "Issues arise, bugs form. Error is inevitable.",
+  "description": "issues arise, bugs form. error is inevitable.",
   "version": "0.0.1",
   "author": {
     "name": "encode42",
@@ -14,11 +14,12 @@
   "scripts": {
     "dev": "vite dev --host",
     "preview": "vite preview",
-    "build": "vite build",
-    "static": "bun . build",
-    "static:force": "bun run static --force",
-    "fetch": "bun . fetch",
-    "fetch:force": "bun run fetch --force",
+    "assets": "bun . assets",
+    "build": "bun run assets && bun run build:static && bun run build:web",
+    "build:web": "vite build",
+    "build:static": "bun . build",
+    "add": "bun . add",
+    "remove": "bun . remove",
     "update": "bun . update"
   },
   "devDependencies": {
@@ -34,6 +35,7 @@
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
     "vite": "^5.0.3",
+    "@darkobits/vite-plugin-favicons": "^0.3.2",
     "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
@@ -46,10 +48,9 @@
     "dotenv": "^16.4.5",
     "fast-xml-parser": "^4.4.0",
     "ffmpeg-static": "^5.2.0",
-    "folder-hash": "^4.0.4",
     "node-vibrant": "^3.2.1-alpha.1",
     "p-throttle": "^6.1.0",
-    "pino": "^9.0.0",
+    "pino": "^9.1.0",
     "pino-pretty": "^11.0.0",
     "sharp": "^0.33.3",
     "svgo": "^3.3.2"

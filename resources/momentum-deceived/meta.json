@@ -10,6 +10,10 @@
 		"songLink": "https://album.link/s/180HPq0QQEsr4c8um4MyBM"
 	},
 	"label": "Momentum Deceived",
-	"description": "The attempts to push towards my aspirations. Was this momentum towards success, or had I been deceived? Only time will tell.\n\nMomentum Deceived consists of songs that I deem \"ready for publishing\", which means they satisfy or surpass the perfectionism I inflict upon my creativity.",
+	"description": [
+		"The attempts to push towards my aspirations. Was this momentum towards success, or had I been deceived? Only time will tell.",
+		"",
+		"Momentum Deceived consists of songs that I deem \"ready for publishing\", which means they satisfy or surpass the perfectionism I inflict upon my creativity."
+	],
 	"color": "#8242f7"
 }

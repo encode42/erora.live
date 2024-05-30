@@ -1,37 +1,21 @@
-import { parseArgs } from "node:util";
+import { opendir } from "node:fs/promises";
 import { build as runBuild } from "../build/build";
 import { log } from "../log";
-import type { Command } from "../types/Command";
-import { getHash, isComplete } from "../util/isComplete";
+import { order, resourcesPath } from "../resource/ensure";
 
-export const build: Command = {
-	"name": "Build",
-	"description": "Build and trim files for the frontend.",
-	"run": async () => {
-		const { values } = parseArgs({
-			"args": Bun.argv,
-			"options": {
-				"force": {
-					"type": "boolean",
-					"default": false
-				}
-			},
-			"strict": true,
-			"allowPositionals": true
-		});
-
-		if (!values.force) {
-			const hash = await isComplete();
-			const currentHash = await getHash();
-
-			if (currentHash === hash) {
-				log.info("No resource changes detected. Skipping static build!");
-				process.exit(0);
-			}
+export async function run() {
+	const directory = await opendir(resourcesPath);
+	for await (const entry of directory) {
+		if (entry.isFile()) {
+			continue;
 		}
 
-		await runBuild();
+		if (order.includes(entry.name)) {
+			continue;
+		}
 
-		process.exit(0);
+		log.warn(`Resource "${entry.name}" no longer exists online! It's recommended to remove this directory.`);
 	}
-};
+
+	await runBuild();
+}

@@ -1,12 +1,20 @@
 {
-    "slug": "continuum",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/continuum",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "Continuum",
-    "description": "An electronic-progressive rock track that nearly missed the scheduled release of Wisp. I spent far too long tweaking the percussion in minor ways, making it slightly more realistic.\n\nHowever, that hard work paid off. This track features very realistic sounding percussion, and instrumentation in general.\n\nRecorded during the Wisp era. Produced on GarageBand for iOS."
+	"slug": "continuum",
+	"released": 1712102400000,
+	"duration": 206.897,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/continuum",
+		"spotify": "https://open.spotify.com/track/11matXgQeG2Kw7Iu1DSPD7",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325386&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=WnouavlSkKE",
+		"songLink": "https://song.link/s/11matXgQeG2Kw7Iu1DSPD7"
+	},
+	"label": "Continuum",
+	"description": [
+		"An electronic-progressive rock track that nearly missed the scheduled release of Wisp. I spent far too long tweaking the percussion in minor ways, making it slightly more realistic.",
+		"",
+		"However, that hard work paid off. This track features very realistic sounding percussion, and instrumentation in general.",
+		"",
+		"Recorded during the Wisp era. Produced on GarageBand for iOS."
+	]
 }

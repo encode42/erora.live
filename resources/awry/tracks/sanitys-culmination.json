@@ -1,16 +1,26 @@
 {
 	"slug": "sanitys-culmination",
+	"released": 1712102400000,
+	"duration": 464.727,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/sanitys-culmination",
-		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+		"spotify": "https://open.spotify.com/track/0tuWmLQ16MtFFsTdwI4S5H",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325395&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=wJkxgAPQGT4",
+		"songLink": "https://song.link/s/0tuWmLQ16MtFFsTdwI4S5H"
 	},
 	"label": "Sanity's Culmination",
-	"description": "This track is greatly inspired by progressive rock. From the length to the percussion style, every aspect of this song was built to the styles of Porcupine Tree or RPWL, with my own style mixed in.\n\nThis track's \"lyrics\" tell the story of someone who's driven themselves to insanity, and nobody stepped in to help them. I'm not a singer, nor do I plan on singing over this track, so you'll have to imagine how they'd be sung\n\nRecorded during the Wisp era. Produced on Ableton Live.",
+	"description": [
+		"This track is greatly inspired by progressive rock. From the length to the percussion style, every aspect of this song was built to the styles of Porcupine Tree or RPWL, with my own style mixed in.",
+		"",
+		"This track's \"lyrics\" tell the story of someone who's driven themselves to insanity, and nobody stepped in to help them. I'm not a singer, nor do I plan on singing over this track, so you'll have to imagine how they'd be sung",
+		"",
+		"Recorded during the Wisp era. Produced on Ableton Live."
+	],
 	"featured": true,
-	"why": "Not only was this my first attempt at producing a proggy song, it's also the first track I wrote lyrics for. Even if cheesy, being based on events that took place in my life, they came from the heart.",
+	"why": [
+		"Not only was this my first attempt at producing a proggy song, it's also the first track I wrote lyrics for. Even if cheesy, being based on events that took place in my life, they came from the heart."
+	],
 	"trim": {
 		"start": "5:52",
 		"duration": 69

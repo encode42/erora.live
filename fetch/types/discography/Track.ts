@@ -1,6 +1,6 @@
-import type { Meta } from "./Meta";
+import type { Links } from "../Links";
 
-interface Trim {
+export interface TrimmableTrack {
 	"trim": {
 		// TODO: stretch goal - crossfade between different trims?
 		"start": string;
@@ -8,26 +8,43 @@ interface Trim {
 	};
 }
 
-interface BaseTrack {
-	"slug": Meta["slug"];
-	"links": Meta["links"];
-	"label": Meta["label"];
-	"description"?: Meta["description"];
+export interface BaseTrack {
+	"slug": string;
+	"duration": number;
+	"links": Links;
+	"label": string;
+	"description"?: string[];
 }
 
-export interface SingleTrack extends BaseTrack, Trim {
-	"released": Meta["released"];
-	"color"?: Meta["color"];
-	"ignored"?: Meta["ignored"];
+export interface Track extends BaseTrack, TrimmableTrack {
+	"type": "track";
+	"released": number;
+	"color"?: string;
+	"ignored"?: boolean;
 }
 
-export interface FeaturedTrack extends BaseTrack, Trim {
-	"featured": true;
-	"why": string;
+export interface MetaTrack {
+	"type": "track";
+	"release": Track;
+	"urls": {
+		"stream": string;
+		"cover": string;
+	};
+	"paths": {
+		"release": string;
+		"audio": string;
+	};
 }
 
-export interface UnfeaturedTrack extends BaseTrack {
-	"featured"?: false;
+export interface LocalTrack {
+	"release": Track;
+	"paths": {
+		"resource": string;
+		"public": string;
+	};
 }
 
-export type AlbumTrack = UnfeaturedTrack | FeaturedTrack;
+export interface BuiltTrack extends Omit<Track, "trim" | "description"> {
+	"color": NonNullable<Track["color"]>;
+	"description"?: string[];
+}

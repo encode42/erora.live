@@ -1,5 +1,4 @@
 <script lang="ts" context="module">
-const volume = 0.25;
 let currentTarget: HTMLAudioElement | undefined;
 
 export function pause() {
@@ -18,6 +17,14 @@ import { tweened } from "svelte/motion";
 import { IconBrandApple, IconBrandBandcamp, IconBrandSpotify, IconBrandYoutube, IconExternalLink, IconPlayerPlayFilled, IconPlayerStopFilled } from "@tabler/icons-svelte";
 import type { Links } from "$types/Links";
 import Button from "$lib/Button.svelte";
+
+interface Buttons {
+	[platform: string]: {
+		"label": string,
+		"color": string,
+		"icon": typeof IconBrandBandcamp
+	}
+}
 
 export let src: string;
 export let color: string;
@@ -38,7 +45,7 @@ $: if (duration) {
 	progress.set(currentTime / duration);
 }
 
-const buttons = {
+const buttons: Buttons = {
 	"bandcamp": {
 		"label": "Bandcamp",
 		"color": "teal",
@@ -74,8 +81,6 @@ const buttons = {
 	bind:duration
 	bind:paused
 	on:play={() => {
-		audioElement.volume = volume;
-
 		if (currentTarget !== audioElement) {
 			pause();
 
@@ -83,7 +88,7 @@ const buttons = {
 		}
 	}}
 	on:ended={() => {
-		pause();
+		currentTime = 0;
 	}}
 >
 	<source src="{src}.ogg" type="audio/ogg"/>

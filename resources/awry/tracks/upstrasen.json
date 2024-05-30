@@ -1,12 +1,18 @@
 {
-    "slug": "upstrasen",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/upstrasen",
-        "spotify": "https://open.spotify.com/album/0mSofIZKFMCvT2we17hdjZ",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mIrMnfT55xXs2eIngNC3G1RXcAwGCBqcE",
-        "songLink": "https://album.link/s/0mSofIZKFMCvT2we17hdjZ"
-    },
-    "label": "Upstrasen",
-    "description": "There's not much to say about this track, besides the fact that it was inspired by C418's works.\n\nRecorded during the Collection era. Produced on GarageBand for iOS."
+	"slug": "upstrasen",
+	"released": 1712102400000,
+	"duration": 295.652,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/upstrasen",
+		"spotify": "https://open.spotify.com/track/7kVbbc7Yz1uaCIXHXkP77f",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?i=1739334499&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=qDSdR0EkDb4",
+		"songLink": "https://song.link/s/7kVbbc7Yz1uaCIXHXkP77f"
+	},
+	"label": "Upstrasen",
+	"description": [
+		"There's not much to say about this track, besides the fact that it was inspired by C418's works.",
+		"",
+		"Recorded during the Collection era. Produced on GarageBand for iOS."
+	]
 }

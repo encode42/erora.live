@@ -1,52 +1,36 @@
-import { ImpossibleError } from "../error/ImpossibleError";
+import { getSlug } from "../bandcamp/discography";
 import { log } from "../log";
-import { overrides } from "../overrides/overrides";
-import { createTrack } from "../resource/create";
-import { getLinksFromLabel } from "../songLink/links";
-import type { TrackRelease } from "../types/discography/Release";
+import { getTrackPaths } from "../resource/track";
+import type { MetaTrack } from "../types/discography/Track";
+import { ImpossibleError } from "../util/ImpossibleError";
 import { client, largeImageFormat } from "./client";
 
-export async function getTrack(url: string, force: boolean) {
-	const meta = await getTrackMeta(url);
+export async function getTrack(url: string): Promise<MetaTrack> {
+	log.debug(`Getting track from release "${url}"...`);
 
-	log.info(`Processing track ${meta.label}...`);
+	const { release, urls } = await getTrackMeta(url);
 
-	const track: TrackRelease = {
-		"type": "track",
-		"slug": meta.slug,
-		"released": meta.released,
-		"links": meta.links,
-		"label": meta.label,
-		"description": meta.description,
-		"trim": {
-			"start": "0:00",
-			"duration": 30
-		}
-	};
+	log.info(`[${release.label}] Getting metadata`);
 
-	const override = overrides[track.label];
-	if (override?.type === "track") {
-		await override.transform({
-			"track": track
-		});
-	}
-
-	await createTrack({
-		track,
-		"coverUrl": meta.coverUrl,
-		"streamUrl": meta.streamUrl,
-		force
-	});
-
-	log.debug("Finished processing track!");
+	const paths = await getTrackPaths(release.slug);
 
 	return {
-		"slug": meta.slug
+		"type": "track",
+		"release": {
+			"type": "track",
+			...release,
+			"trim": {
+				"start": "0:00",
+				"duration": 0
+			}
+		},
+		urls,
+		paths
 	};
 }
 
-export async function getTrackMeta(url: string) {
-	log.debug(`Fetching metadata for ${url}...`);
+export async function fetchTrackMeta(url: string) {
+	log.debug(`Fetching track metadata for "${url}"...`);
 
 	const bandcampTrack = await client.track.getInfo({
 		"trackUrl": url,
@@ -58,22 +42,29 @@ export async function getTrackMeta(url: string) {
 		throw new ImpossibleError();
 	}
 
-	const links = await getLinksFromLabel(bandcampTrack.album?.name ?? bandcampTrack.name, bandcampTrack.name);
-
 	const meta = {
-		"slug": url.split("/").at(-1) ?? bandcampTrack.name,
-		"released": new Date(bandcampTrack.releaseDate ?? Date.now()).getTime(),
-		"links": {
-			"bandcamp": url,
-			...links
+		"release": {
+			"slug": getSlug(bandcampTrack),
+			"released": new Date(bandcampTrack.releaseDate ?? Date.now()).getTime(),
+			"duration": bandcampTrack.duration ?? 0,
+			"links": {
+				"bandcamp": url
+			},
+			"label": bandcampTrack.name,
+			"description": bandcampTrack.description?.split("\n")
 		},
-		"label": bandcampTrack.name,
-		"description": bandcampTrack.description,
-		"streamUrl": bandcampTrack.streamUrlHQ ?? bandcampTrack.streamUrl,
-		"coverUrl": bandcampTrack.imageUrl
+		"urls": {
+			"stream": bandcampTrack.streamUrlHQ ?? bandcampTrack.streamUrl,
+			"cover": bandcampTrack.imageUrl
+		},
+		"bandcamp": bandcampTrack
 	};
 
-	log.debug(`Fetched metadata! ${JSON.stringify(meta)}`);
+	log.debug("Finished fetching track metadata!");
 
 	return meta;
+}
+
+export async function getTrackMeta(url: string) {
+	return await fetchTrackMeta(url);
 }

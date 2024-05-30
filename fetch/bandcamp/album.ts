@@ -1,23 +1,49 @@
-import { ImpossibleError } from "../error/ImpossibleError";
+import { format } from "node:path";
+import { getSlug } from "../bandcamp/discography";
 import { log } from "../log";
-import { overrides } from "../overrides/overrides";
-import { createAlbum } from "../resource/create";
-import { getLinksFromLabel } from "../songLink/links";
-import type { AlbumRelease } from "../types/discography/Release";
-import type { AlbumTrack } from "../types/discography/Track";
+import { getAlbumPaths } from "../resource/album";
+import type { MetaAlbum, MetaAlbumTrack } from "../types/discography/Album";
+import { ImpossibleError } from "../util/ImpossibleError";
 import { client, largeImageFormat } from "./client";
-import { getTrackMeta } from "./track";
+import { fetchTrackMeta } from "./track";
 
-export async function getAlbum(url: string, force: boolean) {
-	log.debug(`Fetching metadata for ${url}...`);
+export async function getAlbumTrack(url: string, paths: MetaAlbum["paths"]): Promise<MetaAlbumTrack> {
+	log.debug(`Getting album track from "${url}"...`);
+
+	const { parent, position, release, urls } = await getAlbumTrackMeta(url);
+
+	log.info(`[${parent} -> ${release.label}] Getting metadata`);
+
+	const albumTrack: MetaAlbumTrack = {
+		"type": "albumTrack",
+		parent,
+		position,
+		release,
+		urls,
+		"paths": {
+			...paths,
+			"track": format({
+				"dir": paths.tracks,
+				"name": release.slug,
+				"ext": "json"
+			})
+		}
+	};
+
+	log.debug("Finished fetching album track!");
+
+	return albumTrack;
+}
+
+export async function getAlbum(url: string): Promise<MetaAlbum> {
+	log.debug(`Getting album release from "${url}"...`);
 
 	const bandcampAlbum = await client.album.getInfo({
 		"albumUrl": url,
-		"albumImageFormat": largeImageFormat,
-		"includeRawData": true
+		"albumImageFormat": largeImageFormat
 	});
 
-	log.info(`Processing album ${bandcampAlbum.name}...`);
+	log.info(`[${bandcampAlbum.name}] Getting metadata`);
 
 	if (!bandcampAlbum.tracks) {
 		throw new ImpossibleError();
@@ -27,68 +53,53 @@ export async function getAlbum(url: string, force: boolean) {
 		throw new ImpossibleError();
 	}
 
-	const slug = url.split("/").at(-1) ?? bandcampAlbum.name;
-	const links = await getLinksFromLabel(bandcampAlbum.name);
+	const slug = getSlug(bandcampAlbum);
+	const paths = await getAlbumPaths(slug);
 
-	const album: AlbumRelease = {
+	const meta: MetaAlbum["release"] = {
 		"type": "album",
 		slug,
 		"released": new Date(bandcampAlbum.releaseDate ?? Date.now()).getTime(),
 		"links": {
-			"bandcamp": url,
-			...links
+			"bandcamp": url
 		},
 		"label": bandcampAlbum.name,
-		"description": bandcampAlbum.description,
+		"description": bandcampAlbum.description?.split("\n"),
 		"tracks": []
 	};
 
-	const streamUrls: string[] = [];
 	for (const bandcampTrack of bandcampAlbum.tracks) {
-		log.info(`→ ${bandcampTrack.name}`);
-
 		if (!bandcampTrack.url) {
 			throw new ImpossibleError();
 		}
 
-		const trackMeta = await getTrackMeta(bandcampTrack.url);
-
-		const track: AlbumTrack = {
-			"slug": trackMeta.slug,
-			"links": trackMeta.links,
-			"label": trackMeta.label,
-			"description": trackMeta.description
-		};
-
-		const override = overrides[track.label];
-		if (override?.type === "albumTrack") {
-			await override.transform({
-				"album": album,
-				track
-			});
-		}
-
-		album.tracks.push(track);
-		streamUrls.push(trackMeta.streamUrl);
+		meta.tracks.push(await getAlbumTrack(bandcampTrack.url, paths));
 	}
 
-	const override = overrides[album.label];
-	if (override?.type === "album") {
-		await override.transform({
-			album
-		});
+	const album: MetaAlbum = {
+		"type": "album",
+		"release": meta,
+		"urls": {
+			"cover": bandcampAlbum.imageUrl
+		},
+		"paths": paths
+	};
+
+	log.debug("Finished fetching album!");
+
+	return album;
+}
+
+export async function getAlbumTrackMeta(url: string) {
+	const meta = await fetchTrackMeta(url);
+
+	if (!meta.bandcamp.album || !meta.bandcamp.position) {
+		throw new ImpossibleError();
 	}
-
-	await createAlbum({
-		album,
-		"coverUrl": bandcampAlbum.imageUrl,
-		streamUrls,
-		force
-	});
-
-	log.debug("Album has been processed!");
 
 	return {
-		slug
+		"parent": meta.bandcamp.album.name,
+		"position": meta.bandcamp.position,
+		...meta
 	};
 }

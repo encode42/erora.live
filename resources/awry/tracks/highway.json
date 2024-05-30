@@ -1,12 +1,18 @@
 {
-    "slug": "highway",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/highway",
-        "spotify": "https://open.spotify.com/album/0mSofIZKFMCvT2we17hdjZ",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mIrMnfT55xXs2eIngNC3G1RXcAwGCBqcE",
-        "songLink": "https://album.link/s/0mSofIZKFMCvT2we17hdjZ"
-    },
-    "label": "Highway",
-    "description": "A track inspired by the soundscape of Toad's Turnpike from Mario Kart.\n\nRecorded during the Wisp era. Produced on FL Studio."
+	"slug": "highway",
+	"released": 1712102400000,
+	"duration": 122.005,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/highway",
+		"spotify": "https://open.spotify.com/track/0tM0klLuzA7nxQ4SWwfWPj",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?i=1739334506&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=58o20698Ec4",
+		"songLink": "https://song.link/s/0tM0klLuzA7nxQ4SWwfWPj"
+	},
+	"label": "Highway",
+	"description": [
+		"A track inspired by the soundscape of Toad's Turnpike from Mario Kart.",
+		"",
+		"Recorded during the Wisp era. Produced on FL Studio."
+	]
 }

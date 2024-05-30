@@ -1,12 +1,18 @@
 {
 	"slug": "gloom",
+	"released": 1715817600000,
+	"duration": 352.901,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/gloom"
 	},
 	"label": "Gloom",
-	"description": "Featuring an ominous piano in reverse, this track aims to innovate within my personal musical style. As a culmination of everything I've learned thus far, I hope that this track can prove my ability!",
+	"description": [
+		"Featuring an ominous piano in reverse, this track aims to innovate within my personal musical style. As a culmination of everything I've learned thus far, I hope that this track can prove my ability!"
+	],
 	"featured": true,
-	"why": "I believe that this track represents everything I've learned thus far. It's compositionally interesting, achieves a clean, wide mix, and features unique sounds that I personally designed. I'm extremely proud of the end result!",
+	"why": [
+		"I believe that this track represents everything I've learned thus far. It's compositionally interesting, achieves a clean, wide mix, and features unique sounds that I personally designed. I'm extremely proud of the end result!"
+	],
 	"trim": {
 		"start": "3:38",
 		"duration": 54

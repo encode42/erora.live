@@ -1,12 +1,18 @@
 {
-    "slug": "self-deception-demo",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/self-deception-demo",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "Self-Deception (Demo)",
-    "description": "I had planned for this album to imitate existing sounds rather than consist entirely of original works. This track was a result of this planning, with major inspiration from The Binding of Isaac. However, I didn't feel as though I could bring this track to completion as I'd imagined, and ended up scrapping it.\n\nRecorded during the Momentum Deceived era. Produced on Bitwig Studio."
+	"slug": "self-deception-demo",
+	"released": 1712102400000,
+	"duration": 328.914,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/self-deception-demo",
+		"spotify": "https://open.spotify.com/track/1ON5kotZ19KbwPA13JU0BF",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325399&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=0cs9Gr3HqIE",
+		"songLink": "https://song.link/s/1ON5kotZ19KbwPA13JU0BF"
+	},
+	"label": "Self-Deception (Demo)",
+	"description": [
+		"I had planned for this album to imitate existing sounds rather than consist entirely of original works. This track was a result of this planning, with major inspiration from The Binding of Isaac. However, I didn't feel as though I could bring this track to completion as I'd imagined, and ended up scrapping it.",
+		"",
+		"Recorded during the Momentum Deceived era. Produced on Bitwig Studio."
+	]
 }

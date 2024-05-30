@@ -1,48 +1,24 @@
-import { parseArgs } from "node:util";
-import { client } from "../bandcamp/client";
-import { getRelease } from "../bandcamp/discography";
-import { log } from "../log";
-import type { Command } from "../types/Command";
-import { isComplete } from "../util/isComplete";
+import { fetchMeta } from "../bandcamp/discography";
+import { processAlbum, processAlbumTrack } from "../resource/album";
+import { processTrack } from "../resource/track";
+import { parseUrl } from "../util/flags";
 
-export const update: Command = {
-	"name": "Update",
-	"description": "Update the metadata for a specified release.",
-	"run": async () => {
-		await isComplete();
+export async function run() {
+	const url = parseUrl();
 
-		const { values } = parseArgs({
-			"args": Bun.argv,
-			"options": {
-				"url": {
-					"type": "string"
-				},
-				"force": {
-					"type": "boolean",
-					"default": false
-				}
-			},
-			"strict": true,
-			"allowPositionals": true
-		});
+	const meta = await fetchMeta(url);
+	switch (meta.type) {
+		case "album":
+			await processAlbum(meta);
+			break;
 
-		if (!values.url) {
-			throw "The release URL must be provided!";
-		}
+		// TODO: Doesn't update order.json yet
+		case "albumTrack":
+			await processAlbumTrack(meta);
+			break;
 
-		if (values.force) {
-			log.warn('"--force" flag is specified! Existing resource data will be overwritten!');
-		}
-
-		const bandcampRelease = await client[new URL(values.url).pathname.startsWith("/album/") ? "album" : "track"].getInfo({
-			"url": values.url
-		});
-
-		await getRelease({
-			"release": bandcampRelease,
-			"force": values.force ?? false
-		});
-
-		process.exit(0);
+		case "track":
+			await processTrack(meta);
+			break;
 	}
-};
+}

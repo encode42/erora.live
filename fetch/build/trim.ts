@@ -1,17 +1,18 @@
 import { spawnSync } from "bun";
 import ffmpegPath from "ffmpeg-static";
 import { format, join } from "node:path";
-import { ImpossibleError } from "../error/ImpossibleError";
 import { log } from "../log";
-import type { FeaturedTrack, SingleTrack } from "../types/discography/Track";
+import type { FeaturedTrack, LocalAlbumTrack } from "../types/discography/Album";
+import type { LocalTrack, Track } from "../types/discography/Track";
+import { ImpossibleError } from "../util/ImpossibleError";
 
 interface FfmpegOptions {
 	[flag: string]: number | string;
 }
 
 interface SpawnOptions extends FfmpegOptions {
-	"i": string,
-	"output": string
+	"i": string;
+	"output": string;
 }
 
 function spawn(options: SpawnOptions) {
@@ -24,10 +25,7 @@ function spawn(options: SpawnOptions) {
 	options["fflags"] ??= "+bitexact";
 	options["flags:a"] ??= "+bitexact";
 
-	const command = [
-		ffmpegPath,
-		"-y",
-	];
+	const command = [ffmpegPath, "-y"];
 
 	for (const [flag, value] of Object.entries(ffmpegOptions)) {
 		command.push(`-${flag}`, value.toString());
@@ -44,20 +42,18 @@ function spawn(options: SpawnOptions) {
 	log.debug(process.stdout.toString());
 }
 
-export function trim(resourcePath: string, publicPath: string, track: SingleTrack | FeaturedTrack) {
-	log.info(`Trimming audio file ${track.label}...`);
-
-	const [minutes, seconds] = track.trim.start.split(":");
+function trim(release: Track | FeaturedTrack, audioPath: string, publicPath: string) {
+	const [minutes, seconds] = release.trim.start.split(":");
 	const startTime = Math.max(Number.parseInt(minutes) * 60 + Number.parseInt(seconds) - 5, 0);
-	const duration = track.trim.duration + 10; // 5 second fade-in, 5 second fade-out
+	const duration = release.trim.duration + 10; // 5 second fade-in, 5 second fade-out
 
-	const fileName = join(publicPath, track.slug);
+	const fileName = join(publicPath, release.slug);
 
 	spawn({
 		"ss": startTime.toString(),
 		"i": format({
-			"dir": resourcePath,
-			"name": track.slug,
+			"dir": audioPath,
+			"name": release.slug,
 			"ext": "mp3"
 		}),
 		"t": duration,
@@ -69,4 +65,20 @@ export function trim(resourcePath: string, publicPath: string, track: SingleTrac
 		"i": `${fileName}.ogg`,
 		"output": `${fileName}.mp3`
 	});
+}
+
+export function trimTrack({ release, paths }: LocalTrack) {
+	log.info(`[${release.label}] Trimming audio preview`);
+
+	trim(release, paths.resource, paths.public);
+}
+
+export function trimAlbumTrack({ parent, release, paths }: LocalAlbumTrack) {
+	if (!release.featured) {
+		return;
+	}
+
+	log.info(`[${parent} -> ${release.label}] Trimming audio preview`);
+
+	trim(release, paths.audio, paths.public);
 }

@@ -1,12 +1,18 @@
 {
-    "slug": "great-run-demo",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/great-run-demo",
-        "spotify": "https://open.spotify.com/album/0mSofIZKFMCvT2we17hdjZ",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mIrMnfT55xXs2eIngNC3G1RXcAwGCBqcE",
-        "songLink": "https://album.link/s/0mSofIZKFMCvT2we17hdjZ"
-    },
-    "label": "Great Run (Demo)",
-    "description": "A cheesy British style track you'd hear in some television show.\n\nRecorded during the Wisp era. Produced on FL Studio."
+	"slug": "great-run-demo",
+	"released": 1712102400000,
+	"duration": 124.824,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/great-run-demo",
+		"spotify": "https://open.spotify.com/track/0BpHoReWf7zlKbLM8srO8t",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?i=1739334507&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=hp6CKLTDf0U",
+		"songLink": "https://song.link/s/0BpHoReWf7zlKbLM8srO8t"
+	},
+	"label": "Great Run (Demo)",
+	"description": [
+		"A cheesy British style track you'd hear in some television show.",
+		"",
+		"Recorded during the Wisp era. Produced on FL Studio."
+	]
 }

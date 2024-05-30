@@ -1,5 +1,4 @@
-import { log } from "../log";
-import { spotifyDiscography } from "../spotify/discography";
+import { getSpotify } from "../spotify/discography";
 import type { Links } from "../types/Links";
 import { songLinkOrder } from "../types/Links";
 import { fetchSongLink } from "./client";
@@ -21,8 +20,6 @@ export async function getLinks(uri: string, isTrack: boolean) {
 		links[platform] = songLinkPlatform.url;
 	}
 
-	log.debug(`Found the following links: ${Object.keys(links).join(",")}`);
-
 	return {
 		...links,
 		"songLink": songLink.pageUrl
@@ -30,10 +27,10 @@ export async function getLinks(uri: string, isTrack: boolean) {
 }
 
 export async function getLinksFromLabel(album: string, track?: string): Promise<Links> {
+	const spotifyDiscography = await getSpotify();
+
 	const spotifyAlbum = spotifyDiscography[album];
 	if (!spotifyAlbum) {
-		log.debug(`Album "${album}" does not exist on Spotify!`);
-
 		return {};
 	}
 
@@ -42,8 +39,6 @@ export async function getLinksFromLabel(album: string, track?: string): Promise<
 	if (track) {
 		const spotifyTrack = spotifyAlbum.tracks[track as keyof typeof spotifyAlbum];
 		if (!spotifyTrack) {
-			log.debug(`Track "${track}" does not exist on Spotify!`);
-
 			return {};
 		}
 

@@ -1,16 +1,24 @@
 {
 	"slug": "sky-demo",
+	"released": 1712102400000,
+	"duration": 237.08,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/sky-demo",
-		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+		"spotify": "https://open.spotify.com/track/5BcbdjkBrw7vXcYgRl5fEd",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325396&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=OAehbzA225A",
+		"songLink": "https://song.link/s/5BcbdjkBrw7vXcYgRl5fEd"
 	},
 	"label": "Sky (Demo)",
-	"description": "Motivated by the works of Chris Christodoulou, this was my first demo focusing on producing a proggy sound. While sloppy, due to the fact that I haven't practiced guitar often, I believe this track successfully reproduces the soul of progressive rock.\n\nRecorded during the Progressive era. Produced on Bitwig Studio.",
+	"description": [
+		"Motivated by the works of Chris Christodoulou, this was my first demo focusing on producing a proggy sound. While sloppy, due to the fact that I haven't practiced guitar often, I believe this track successfully reproduces the soul of progressive rock.",
+		"",
+		"Recorded during the Progressive era. Produced on Bitwig Studio."
+	],
 	"featured": true,
-	"why": "Though this is a rough demo that requires lots of polish, I'm proud of what I pulled off despite my limitations. Even though I didn't own a bass, nor could I think like a drummer, I still prevailed.",
+	"why": [
+		"Though this is a rough demo that requires lots of polish, I'm proud of what I pulled off despite my limitations. Even though I didn't own a bass, nor could I think like a drummer, I still prevailed."
+	],
 	"trim": {
 		"start": "2:06",
 		"duration": 50

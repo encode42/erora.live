@@ -1,0 +1,24 @@
+{
+	"slug": "order",
+	"released": 1704067200000,
+	"duration": 270.959,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/order",
+		"spotify": "https://open.spotify.com/track/1eYDVsxCTZR9EzWBbJuipX",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1723753633?i=1723753945&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=n-ciJyQPOew",
+		"songLink": "https://song.link/s/1eYDVsxCTZR9EzWBbJuipX"
+	},
+	"label": "Order",
+	"description": [
+		"This album pushed me to improve in many aspects of music production. One of those being my piano skills. Order initially started through my attempts to get better at playing the keys. I ended up finding a verse and chorus melody that I enjoyed, resulting in this song's development. It was also the leading factor of inspiration for the album's cover art, with its retro 80s vibe."
+	],
+	"featured": true,
+	"why": [
+		"As a musician, I've been learning how to play various instruments all my life. Though, one instrument I constantly pushed away was the piano. Since most of my work is synthesized through a piano roll, learning the piano could enhance my understanding of what I'm producing."
+	],
+	"trim": {
+		"start": "2:27",
+		"duration": 53
+	}
+}

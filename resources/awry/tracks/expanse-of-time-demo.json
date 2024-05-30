@@ -1,12 +1,18 @@
 {
-    "slug": "expanse-of-time-demo",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/expanse-of-time-demo",
-        "spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-        "songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
-    },
-    "label": "Expanse of Time (Demo)",
-    "description": "Produced as a way to learn new software, this sound paved the way for my future style. A simple music box melody.\n\nRecorded during the Momentum Deceived era. Produced on Bitwig Studio."
+	"slug": "expanse-of-time-demo",
+	"released": 1712102400000,
+	"duration": 129.542,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/expanse-of-time-demo",
+		"spotify": "https://open.spotify.com/track/5q9qil5yNDSucZxYJY71kE",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325388&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=ntnobaRePBI",
+		"songLink": "https://song.link/s/5q9qil5yNDSucZxYJY71kE"
+	},
+	"label": "Expanse of Time (Demo)",
+	"description": [
+		"Produced as a way to learn new software, this sound paved the way for my future style. A simple music box melody.",
+		"",
+		"Recorded during the Momentum Deceived era. Produced on Bitwig Studio."
+	]
 }

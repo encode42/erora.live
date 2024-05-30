@@ -1,21 +1,22 @@
-import meta from "../package.json";
-import * as commands from "./commands/commands";
+import { format, resolve } from "node:path";
 import { log } from "./log";
 
-const selectedCommand = commands[Bun.argv[2] as keyof typeof commands];
-if (selectedCommand) {
-	await selectedCommand.run();
-} else {
-	log.info(`${meta.name} v${meta.version}`);
-	log.info(`	${meta.description}`);
-	log.info(`	Maintained by ${meta.author.name} (${meta.author.email})`);
-	log.info("");
-	log.info("Available commands:");
+const commandsPath = resolve("fetch/commands");
+const input = Bun.argv[2];
 
-	for (const [command, value] of Object.entries(commands)) {
-		log.info(`	${value.name} - ${value.description}`);
-		log.info(`		Usage: ${meta.name} ${command}`);
-	}
+const commandPath = format({
+	"dir": commandsPath,
+	"name": input,
+	"ext": "ts"
+});
 
-	process.exit(0);
+log.debug(`Importing from "${commandPath}"...`);
+
+const command = await import(commandPath);
+if (!command || !("run" in command && typeof command.run === "function")) {
+	log.error(`Command "${input}" does not exist!`);
+	process.exit(1);
 }
+
+const exitCode = await command.run();
+process.exit(exitCode ?? 0);

@@ -1,16 +1,24 @@
 {
 	"slug": "kelno",
+	"released": 1712102400000,
+	"duration": 223.636,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/kelno",
-		"spotify": "https://open.spotify.com/album/4O23PAiCcFfk08hww7X6H0",
-		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mP--Y_6pasUloxtEY52QF9GYEVeetWquo",
-		"songLink": "https://album.link/s/4O23PAiCcFfk08hww7X6H0"
+		"spotify": "https://open.spotify.com/track/1kiwf3h7TBLPPui66o5kOp",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739325383?i=1739325406&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=8UXqcxxkxmo",
+		"songLink": "https://song.link/s/1kiwf3h7TBLPPui66o5kOp"
 	},
 	"label": "Kelno",
-	"description": "The result of a challenge to compose a song in less than an hour. This restriction let me break out of my perfectionist composition style, and rather compose a full song. I believe this turned out very well, and helped me in my future compositions.\n\nRecorded during the Collection era. Produced on GarageBand for iOS.",
+	"description": [
+		"The result of a challenge to compose a song in less than an hour. This restriction let me break out of my perfectionist composition style, and rather compose a full song. I believe this turned out very well, and helped me in my future compositions.",
+		"",
+		"Recorded during the Collection era. Produced on GarageBand for iOS."
+	],
 	"featured": true,
-	"why": "While Natural Decay is the first track I publicly released, Kelno was the first track I released featuring a realistic style. I believe this song falls under the genre of contemporary, with realistic and synthetic instruments intertwined.",
+	"why": [
+		"While Natural Decay is the first track I publicly released, Kelno was the first track I released featuring a realistic style. I believe this song falls under the genre of contemporary, with realistic and synthetic instruments intertwined."
+	],
 	"trim": {
 		"start": "2:38",
 		"duration": 20

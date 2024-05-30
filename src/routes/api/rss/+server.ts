@@ -1,5 +1,5 @@
 import releasesData from "$lib/releases.json";
-import type { BuiltRelease } from "$types/discography/BuiltRelease";
+import type { BuiltRelease } from "$types/discography/Release";
 import { XMLBuilder } from "fast-xml-parser";
 
 export const prerender = true;

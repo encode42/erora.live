@@ -1,5 +1,7 @@
 {
 	"slug": "inferred-dreams",
+	"released": 1712620800000,
+	"duration": 254.793,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/track/inferred-dreams",
 		"spotify": "https://open.spotify.com/track/6VngLd80KD0OpoLK9Ja4Jx",
@@ -8,9 +10,17 @@
 		"songLink": "https://song.link/s/6VngLd80KD0OpoLK9Ja4Jx"
 	},
 	"label": "Inferred Dreams",
-	"description": "Lena Raine's philosophy, with a focus on softness and quietness, took control of this track. I intentionally pushed myself to embrace the power of silence, and though I couldn't push myself as much as I'd prefer, compared to my previous tracks, I have achieved my goal.\n\nOnly after I had finished this track did I realize it's subconscious inspiration: C418's remix of \"Atempause\". I loved their rendition of the track. It had been a few months since I had last heard it, so I unfortunately didn't make the connection as soon as I'd like.",
+	"description": [
+		"Lena Raine's philosophy, with a focus on softness and quietness, took control of this track. I intentionally pushed myself to embrace the power of silence, and though I couldn't push myself as much as I'd prefer, compared to my previous tracks, I have achieved my goal.",
+		"",
+		"Only after I had finished this track did I realize it's subconscious inspiration: C418's remix of \"Atempause\". I loved their rendition of the track. It had been a few months since I had last heard it, so I unfortunately didn't make the connection as soon as I'd like."
+	],
 	"featured": true,
-	"why": "Featuring randomly generated percussion and an overlapping chord pattern, this track began as my answer to Lena Raine's \"Stand Tall\". I noticed how her track mastered the concept of silence, which I wanted to reproduce. This track started with two widely spaced chords, which were then sped up and layered over the original chord pattern.",
+	"why": [
+		"Featuring randomly generated percussion and an overlapping chord pattern, this track began as my answer to Lena Raine's \"Stand Tall\". I noticed how her track mastered the concept of silence, which I wanted to reproduce.",
+		"",
+		"This track started with two widely spaced chords, which were then sped up and layered over the original chord pattern."
+	],
 	"trim": {
 		"start": "1:43",
 		"duration": 38

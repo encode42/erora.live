@@ -13,7 +13,7 @@ const songLinkThrottler = pThrottle({
 });
 
 export const fetchSongLink = songLinkThrottler(async (spotifyUri: string, isTrack: boolean): Promise<SongLinkResponse> => {
-	log.debug(`Fetching song links for ${spotifyUri}...`);
+	log.debug(`Fetching song links for "${spotifyUri}"...`);
 
 	songLinkEndpoint.searchParams.set("url", encodeURIComponent(spotifyUri));
 	songLinkEndpoint.searchParams.set("songIfSingle", encodeURIComponent(isTrack));
@@ -26,16 +26,16 @@ export const fetchSongLink = songLinkThrottler(async (spotifyUri: string, isTrac
 		}
 	});
 
-	if (!response.ok) {
+	if (!response.ok && response.status !== 404) {
 		if (response.status === 404) {
-			log.warn("No links could be found.");
+			log.warn("No song links could be found.");
 		}
 
 		throw `${response.status}: ${response.statusText}`;
 	}
 
 	const data = await response.json();
-	log.debug(`Finished fetching! ${JSON.stringify(data)}`);
+	log.debug("Song links have successfully been fetched!");
 
 	return data;
 });

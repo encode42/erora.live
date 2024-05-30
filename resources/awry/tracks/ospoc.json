@@ -1,12 +1,18 @@
 {
-    "slug": "ospoc",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/ospoc",
-        "spotify": "https://open.spotify.com/album/0mSofIZKFMCvT2we17hdjZ",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mIrMnfT55xXs2eIngNC3G1RXcAwGCBqcE",
-        "songLink": "https://album.link/s/0mSofIZKFMCvT2we17hdjZ"
-    },
-    "label": "Ospoc",
-    "description": "This track was inspired by the OneShot OST. My goal was to compose a song that could be background music for a game. This meant keeping things simple, which was a mindset I did not have prior to this song's inception. I now realize that songs do not need to be complex and unique, as long as they serve their purpose.\n\nRecorded during the Collection era. Produced on GarageBand for iOS."
+	"slug": "ospoc",
+	"released": 1712102400000,
+	"duration": 248.841,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/ospoc",
+		"spotify": "https://open.spotify.com/track/4MHEyGtKMkGKn1Ij6tjokE",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?i=1739334497&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=ypoc--vcY9Q",
+		"songLink": "https://song.link/s/4MHEyGtKMkGKn1Ij6tjokE"
+	},
+	"label": "Ospoc",
+	"description": [
+		"This track was inspired by the OneShot OST. My goal was to compose a song that could be background music for a game. This meant keeping things simple, which was a mindset I did not have prior to this song's inception. I now realize that songs do not need to be complex and unique, as long as they serve their purpose.",
+		"",
+		"Recorded during the Collection era. Produced on GarageBand for iOS."
+	]
 }

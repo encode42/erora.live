@@ -1,12 +1,18 @@
 {
-    "slug": "parts-of-someone",
-    "links": {
-        "bandcamp": "https://erora.bandcamp.com/track/parts-of-someone",
-        "spotify": "https://open.spotify.com/album/0mSofIZKFMCvT2we17hdjZ",
-        "appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
-        "youtube": "https://www.youtube.com/playlist?list=OLAK5uy_mIrMnfT55xXs2eIngNC3G1RXcAwGCBqcE",
-        "songLink": "https://album.link/s/0mSofIZKFMCvT2we17hdjZ"
-    },
-    "label": "Parts of Someone",
-    "description": "This track was heavily inspired by Steven Wilson's works and related projects. The song I drew most inspiration from is No Part of Me from the album Grace for Drowning.\n\nRecorded during the Wisp era. Produced on Ableton Live."
+	"slug": "parts-of-someone",
+	"released": 1712102400000,
+	"duration": 280.615,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/parts-of-someone",
+		"spotify": "https://open.spotify.com/track/1u0ttt1tbKOKOK5XsXvDPR",
+		"appleMusic": "https://geo.music.apple.com/us/album/_/1739334400?i=1739334503&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m",
+		"youtube": "https://www.youtube.com/watch?v=m-ijeNfmQRs",
+		"songLink": "https://song.link/s/1u0ttt1tbKOKOK5XsXvDPR"
+	},
+	"label": "Parts of Someone",
+	"description": [
+		"This track was heavily inspired by Steven Wilson's works and related projects. The song I drew most inspiration from is No Part of Me from the album Grace for Drowning.",
+		"",
+		"Recorded during the Wisp era. Produced on Ableton Live."
+	]
 }
