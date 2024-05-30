@@ -19,7 +19,9 @@ export async function ensureDirectory(path: string) {
 	try {
 		await access(path);
 	} catch {
-		await mkdir(path);
+		await mkdir(path, {
+			"recursive": true
+		});
 
 		log.debug("Created new directory!");
 		return;

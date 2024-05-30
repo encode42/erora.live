@@ -1,15 +1,15 @@
+import { flavors } from "@catppuccin/palette";
+import { faviconsPlugin } from "@darkobits/vite-plugin-favicons";
 import type { FaviconsPluginOptions } from "@darkobits/vite-plugin-favicons/dist/etc/types";
 import { sveltekit } from "@sveltejs/kit/vite";
 import MagicString from "magic-string";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
-import { faviconsPlugin } from "@darkobits/vite-plugin-favicons";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-import { flavors } from "@catppuccin/palette";
 
 const baseFavicons: FaviconsPluginOptions["icons"][keyof FaviconsPluginOptions["icons"]] = {
-	"source": "./static/badge.svg"
-}
+	"source": "./resources/badge.svg"
+};
 
 export default defineConfig({
 	"clearScreen": false,
@@ -40,7 +40,7 @@ export default defineConfig({
 				"mozjpeg": true
 			}
 		})
-	],
+	]
 });
 
 // https://github.com/tabler/tabler-icons/issues/669#issuecomment-1993756128
