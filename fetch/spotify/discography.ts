@@ -1,5 +1,5 @@
 import { log } from "../log";
-import { client } from "./client";
+import { getClient } from "./client";
 
 interface SpotifyDiscography {
 	[album: string]: {
@@ -20,6 +20,8 @@ export async function getSpotify() {
 	if (populated) {
 		return spotifyDiscography;
 	}
+
+	const client = getClient();
 
 	log.debug("Populating Spotify discography...");
 	const spotifyAlbums = await client.artists.albums("52lfuNcFTbrdWz8EssQPCr");
