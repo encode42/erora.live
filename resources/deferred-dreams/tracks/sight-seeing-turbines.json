@@ -1,0 +1,24 @@
+{
+	"slug": "sight-seeing-turbines",
+	"released": 1715817600000,
+	"duration": 532.275,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/sight-seeing-turbines"
+	},
+	"label": "Sight-Seeing Turbines",
+	"description": [
+		"This track would ideally be placed after a high-stress, chaotic, intense chapter of the game. Similar to chapter four of Celeste, this is meant to be a calmer, relaxing track to go with a peaceful environment.",
+		"",
+		"I personally envision a vast rolling plains at dusk, with little to no critters contributing to the soundscape. Only windmills are within view. The player is determined to continue their journey, despite the pain they've just experienced."
+	],
+	"featured": true,
+	"why": [
+		"I've often struggled to hold myself back. I would push a track as far as it goes, maxing out its \"hype level\". This may be fine for songs that are meant to be listened to standalone, but this EP is designed to be used as background music.",
+		"",
+		"This is my first track where I've attempted to keep a consistent \"hype level\" throughout the track, resulting in this beautiful, chilling track. I'm very proud of it."
+	],
+	"trim": {
+		"start": "5:13",
+		"duration": 60
+	}
+}
