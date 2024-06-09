@@ -1,0 +1,23 @@
+{
+	"slug": "beyond-the-silvered-glass",
+	"released": 1715817600000,
+	"duration": 393.503,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/beyond-the-silvered-glass"
+	},
+	"label": "Beyond the Silvered Glass",
+	"description": [
+		"Inspired by chapter five of Celeste, I attempted to create a mysterious, ambient drone."
+	],
+	"featured": true,
+	"why": [
+		"From other musicians, I've often heard that I should take what I like from tracks I love, and implement them in my own way. I never understood when this would occur, or when it wouldn't be considered stealing.",
+		"",
+		"This track changed my mind. Before development on this track began, I had reversed the track, \"In the Mirror\" by Lena Raine. Within is another track reversed, as well as an easter egg. During this, I noticed that the percussion sounded quite interesting in reverse.",
+		"Since this track has been inspired by Lena Raine's track, I decided to implement my own reversed shenanigans. I took what I liked from what I loved, and implemented it in my own way."
+	],
+	"trim": {
+		"start": "3:13",
+		"duration": 47
+	}
+}
