@@ -3,15 +3,20 @@
 	"slug": "deferred-dreams",
 	"released": 1724803200000,
 	"links": {
-		"bandcamp": "https://erora.bandcamp.com/album/deferred-dreams"
+		"bandcamp": "https://erora.bandcamp.com/album/deferred-dreams",
+		"spotify": "https://open.spotify.com/album/2EOifPmJ4kL4nPdyrCWfET",
+		"youtube": "https://www.youtube.com/playlist?list=OLAK5uy_nq-hONW0zo3S--Ep7HftUaeetFffK2SNI",
+		"songLink": "https://album.link/s/2EOifPmJ4kL4nPdyrCWfET"
 	},
 	"label": "Deferred Dreams",
 	"description": [
-		"The soundtrack for a game that's yet to exist.",
+		"The soundtrack for a game never to exist.",
 		"",
-		"This is my imagining of what I'd compose for my ideal video game! Whether this game ever makes it to release or if I'll be brought on to work on existing games is continuously unknown. Can these tracks change that?",
+		"A compilation of tracks intended to work with video games. Whether they'll ever find their way into a game is continuously unknown. Uncertainty shrouds whether I'd ever compose for games. Can these tracks change that?",
 		"",
-		"This is essentially my resume for those interested in my work."
+		"This is essentially my resume for those interested in my work!",
+		"",
+		"Contained within this album are four game jam tracks, alongside four personal tracks. I've written about the story of each track within their descriptions!"
 	],
 	"color": "#a4e43c"
 }
