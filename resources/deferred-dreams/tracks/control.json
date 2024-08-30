@@ -3,7 +3,10 @@
 	"released": 1724803200000,
 	"duration": 486.265,
 	"links": {
-		"bandcamp": "https://erora.bandcamp.com/track/control"
+		"bandcamp": "https://erora.bandcamp.com/track/control",
+		"spotify": "https://open.spotify.com/track/5N2etZ4YVw4SA8Os0rmqCi",
+		"youtube": "https://www.youtube.com/watch?v=Lez9Yeo6EH8",
+		"songLink": "https://song.link/s/5N2etZ4YVw4SA8Os0rmqCi"
 	},
 	"label": "Control",
 	"description": [
