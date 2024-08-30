@@ -1,7 +1,7 @@
 {
 	"type": "album",
 	"slug": "deferred-dreams",
-	"released": 1715817600000,
+	"released": 1724803200000,
 	"links": {
 		"bandcamp": "https://erora.bandcamp.com/album/deferred-dreams"
 	},
@@ -13,5 +13,5 @@
 		"",
 		"This is essentially my resume for those interested in my work."
 	],
-	"color": "#dcc47c"
+	"color": "#a4e43c"
 }
