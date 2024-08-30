@@ -1,0 +1,26 @@
+{
+	"slug": "control",
+	"released": 1724803200000,
+	"duration": 486.265,
+	"links": {
+		"bandcamp": "https://erora.bandcamp.com/track/control"
+	},
+	"label": "Control",
+	"description": [
+		"Created for the seventh OST Composing Jam​, this track features drawn-out strings paired with a massive acoustic piano to achieve an ethereal vibe. Combined with various electronic soundscapes and an epic percussive finale, I hope this song successfully fits the event's theme.",
+		"",
+		"This track has been designed as two parts, one for a general \"wonder\" stage of the story, and the other being \"discovery\". I attempted to incorporate feelings of anxiety and uncertainty, especially in the latter half. I also wanted to hint at the highs and lows of life with a few motifs. Living in our own worlds, we are not perfect, and there is much left undiscovered.",
+		"",
+		"The theme of the jam reminded me of Celeste, especially Farewell's chapter, so I included some references to Lena Raine's soundtrack. I also leaned heavily into Chris Christodoulou's synth and percussion style to bring together some of my favorite works. Since this would theoretically be part of a whole game, I set up some motifs that could be used in future/prior tracks."
+	],
+	"featured": true,
+	"why": [
+		"Before participating in this jam, I was lost. I didn't know how to improve or where to go next. I found the jam while browsing itch.io's jams list in an attempt to just find something to work on. Instead, I found a community invested in helping others along their own musical journey.",
+		"",
+		"I placed 86th out of 665. Though it wasn't in the target top-twenty, I'm very proud that I managed to somehow stand out amongst so many amazing submissions. Congratulations to the winners, they deserve it! And thank you to everyone else who provided feedback, little or big, because every bit is extremely valuable to me."
+	],
+	"trim": {
+		"start": "5:25",
+		"duration": 54
+	}
+}

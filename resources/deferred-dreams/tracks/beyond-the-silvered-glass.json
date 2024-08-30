@@ -1,13 +1,15 @@
 {
-	"slug": "beyond-the-silvered-glass",
-	"released": 1715817600000,
+	"slug": "beyond-the-silvered-glass-2",
+	"released": 1724803200000,
 	"duration": 393.503,
 	"links": {
-		"bandcamp": "https://erora.bandcamp.com/track/beyond-the-silvered-glass"
+		"bandcamp": "https://erora.bandcamp.com/track/beyond-the-silvered-glass-2"
 	},
 	"label": "Beyond the Silvered Glass",
 	"description": [
-		"Inspired by chapter five of Celeste, I attempted to create a mysterious, ambient drone."
+		"Inspired by chapter five of Celeste, I attempted to create a mysterious, ambient drone. This track features multiple patterns played forwards and backwards simultaneously to create a \"mirrored\" vibe. The percussion was difficult to mix, due to its booming hard-hitting nature.",
+		"",
+		"The track's name is based on the auditory concept showcased within; mirroring. A silvered glass is essentially a mirror, and when observed, what's beyond it is your own reflection."
 	],
 	"featured": true,
 	"why": [
@@ -17,7 +19,7 @@
 		"Since this track has been inspired by Lena Raine's track, I decided to implement my own reversed shenanigans. I took what I liked from what I loved, and implemented it in my own way."
 	],
 	"trim": {
-		"start": "3:13",
+		"start": "2:18",
 		"duration": 47
 	}
 }
